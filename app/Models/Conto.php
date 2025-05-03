@@ -18,7 +18,7 @@ class Conto extends Model
         'numero_ospiti',
         'tipologia_stanza',
         'costo_pasto_giornaliero',
-        'eventi_extra','costo_totale',
+        'eventi_extra', 'pagato'
     ];
 
     /**

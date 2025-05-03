@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\DatePicker;
+use Filament\Tables\Columns\ToggleColumn;
+use Filament\Forms\Components\Hidden;
+
 class ContoResource extends Resource
 {
     protected static ?string $model = Conto::class;
@@ -31,17 +34,21 @@ class ContoResource extends Resource
                 Forms\Components\Toggle::make(name: 'artista_evento')
                     ->label('Artista di un evento?')
                     ->reactive()
+                    ->default(false)->afterStateUpdated(function (callable $set, $state) {
+                        $set('pagato', $state);
+                    }),
+                
+                Hidden::make('pagato')
                     ->default(false),
+
 
                 DatePicker::make('data_arrivo')
                     ->label('Data di arrivo?')
-                    // ->format('d/m/Y')
                     ->default('01/06/2025')
                     ->closeOnDateSelection(),
                 
                 DatePicker::make('data_partenza')
                     ->label('Data di partenza?')
-                    // ->format('d/m/Y')
                     ->default('01/06/2025')
                     ->closeOnDateSelection(),
 
@@ -57,10 +64,6 @@ class ContoResource extends Resource
         
                     Forms\Components\Toggle::make('paga_ospitalita')
                         ->label('Paga dormire')
-
-                        // ->afterStateUpdated(fn (Forms\Set $set, Forms\Get $get) =>
-                        //     $set('costo_totale', ContoResource::calculateCost($get))
-                        // )
                         ->default(true)
                         ->reactive(),
         
@@ -68,28 +71,13 @@ class ContoResource extends Resource
                         ->label('Numero ospiti')
                         ->visible(fn (Forms\Get $get) => $get('paga_ospitalita'))
                         ->options([1 => '1', 2 => '2'])
-                        // ->afterStateUpdated(fn (Forms\Set $set, Forms\Get $get) =>
-                        //     $set('costo_totale', ContoResource::calculateCost($get))
-                        // )
                         ->required()
                         ->reactive(),
         
                     Forms\Components\Toggle::make('paga_biancheria')
                         ->label('Lenzuola?')
                         ->visible(fn (Forms\Get $get) => $get('paga_ospitalita'))
-                        // ->afterStateUpdated(fn (Forms\Set $set, Forms\Get $get) =>
-                        //     $set('costo_totale', ContoResource::calculateCost($get))
-                        // )
                         ->default(false),
-        
-                    // Forms\Components\TextInput::make('notti')
-                    //     ->label('Numero di notti')
-                    //     ->numeric()
-                    //     ->required()
-                    //     // ->afterStateUpdated(fn (Forms\Set $set, Forms\Get $get) =>
-                    //     //     $set('costo_totale', ContoResource::calculateCost($get))
-                    //     // )
-                    //     ->reactive(),
         
                     Forms\Components\Select::make('tipologia_stanza')
                         ->label('Tipologia stanza')
@@ -100,9 +88,6 @@ class ContoResource extends Resource
                             'camerella' => 'Camerella',
                         ])
                         ->required()
-                        // ->afterStateUpdated(fn (Forms\Set $set, Forms\Get $get) =>
-                        //     $set('costo_totale', ContoResource::calculateCost($get))
-                        // )
                         ->reactive(),
         
                     Forms\Components\TextInput::make('costo_pasto_giornaliero')
@@ -110,9 +95,6 @@ class ContoResource extends Resource
                         ->visible(fn (Forms\Get $get) => !$get('paga_ospitalita'))
                         ->numeric()
                         ->default(5)
-                        // ->afterStateUpdated(fn (Forms\Set $set, Forms\Get $get) =>
-                        //     $set('costo_totale', ContoResource::calculateCost($get))
-                        // )
                         ->required(),
         
                     Forms\Components\Repeater::make('eventi_extra')
@@ -125,23 +107,9 @@ class ContoResource extends Resource
                                 ->numeric()
                                 ->required(),
                         ])
-                        // ->afterStateUpdated(fn (Forms\Set $set, Forms\Get $get) =>
-                        //     $set('costo_totale', ContoResource::calculateCost($get))
-                        // )
                         ->defaultItems(0)
                         ->reorderable(),
-
-                        // Forms\Components\Placeholder::make('costo_totale_info')
-                        // ->label('OCIO!!!!')
-                        // ->content('IN CASO DI MODIFICHE, VARIA I GIORNI DI PERMANENZA ED EVENTUALMENTE IL TIPO DI CAMERA!')
-                        // ->columnSpan('full'),
-
         
-                    // Forms\Components\TextInput::make('costo_totale')
-                    //     ->label('Costo totale')
-                    //     ->disabled()
-                    //     ->dehydrated()
-                    //     ->numeric(),
                 ])->visible(fn (Forms\Get $get) => !$get('artista_evento'))
 
             ]);
@@ -152,13 +120,13 @@ class ContoResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nome')->sortable()->searchable(),
-                // Tables\Columns\TextColumn::make('costo_totale')
-                //     ->label('Totale')
-                //     ->money('EUR')
-                //     ->sortable(),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Data')
                     ->dateTime(),
+
+                    ToggleColumn::make('pagato')
+                        ->label('Saldato?'),
                 
                     Tables\Columns\TextColumn::make('link_scontrino')
                     ->label('Scontrino')

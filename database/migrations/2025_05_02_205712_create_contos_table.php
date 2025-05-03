@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('tipologia_stanza')->nullable();
             $table->decimal('costo_pasto_giornaliero', 8, 2)->default(5.00)->nullable();
             $table->json('eventi_extra')->nullable();
-            $table->decimal('costo_totale', 8, 2)->default(0);
+            $table->boolean('pagato')->default(false);
             $table->timestamps();
         });
     }
