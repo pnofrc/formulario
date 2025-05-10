@@ -81,12 +81,16 @@ Conto per {{ $conto->nome }}
 
         
     @if (! $conto->pagato_iscrizione)
-⚠️ Per favore iscriviti (se non ti sei 
-    già iscrittx l'anno scorso) e paga 
+⚠️ Per favore iscriviti e paga 
     l'iscrizione alla nostra associazione 
     Distretto A (la transazione deve 
     essere un pagamento differente):  
     <a href="https://forms.gle/o531HuN5Rt7XyVzJ7">https://forms.gle/o531HuN5Rt7XyVzJ7</a>
+
+    (Non registrarti se ti sei iscritto l'anno scorso, 
+    ma paga solo l'anno nuovo (10€)! 
+    ATTENZIONE: deve trattarsi di una transazione diversa 
+    da quella del soggiorno.)
     @endif
     
     @else
@@ -138,12 +142,18 @@ Invoice for {{ $conto->nome }}
     
 
 
-    🙏 If you attended events with free donations, please consider contributing more :)
+    🙏 If you attended events with free donations, 
+    please consider contributing more :)
     
     @if (! $conto->pagato_iscrizione)
 ⚠️ Please register and pay the subscription
     to our association Distretto A:
-    https://forms.gle/o531HuN5Rt7XyVzJ7
+    <a href="https://forms.gle/o531HuN5Rt7XyVzJ7">https://forms.gle/o531HuN5Rt7XyVzJ7</a>
+
+    (don't register if you subscribed the last year, 
+    but pay the new year (10€)! 
+    PAY ATTENTION: It has to be a different transaction 
+    rather than the staying.)
     @endif
 
     @endif
@@ -155,7 +165,7 @@ Invoice for {{ $conto->nome }}
         $tot = 0;
         switch ($conto->tipologia_stanza) {
             case 'camerata':
-                if ($giorni >= 4) $tot += 25 * $giorni * $guests;
+                $tot += 20 * $giorni * $guests;
                 break;
             case 'cameratina':
                 if ($giorni >= 12) $tot += 25 * $giorni * $guests;
