@@ -73,12 +73,26 @@ Conto per {{ $conto->nome }}
     💰 Totale da versare: €{{ number_format($tot, 2) }}
     --------------------------
     
+    Metodi di pagamento:
+
+    Paypal:
+    <a href="https://www.paypal.com/paypalme/habitattt">https://www.paypal.com/paypalme/habitattt</a>
+    (Se possibile: Seleziona pagamento per amici :))
+       
+
+    Trasferimento bancario: 
+    Intestato a: DISTRETTO A APS 
+    IBAN: IT88Q0623023704000030225469
+    Causale: Offerta per associazione
+
+    ==========================
     
     🙏 Se hai partecipato a degli 
     eventi con offerta libera, 
     valuta se dare un contributo 
     maggiore :)
 
+    ==========================
         
     @if (! $conto->pagato_iscrizione)
 ⚠️ Per favore iscriviti e paga 
@@ -87,14 +101,15 @@ Conto per {{ $conto->nome }}
     essere un pagamento differente):  
     <a href="https://forms.gle/o531HuN5Rt7XyVzJ7">https://forms.gle/o531HuN5Rt7XyVzJ7</a>
 
-    (Non registrarti se ti sei iscritto l'anno scorso, 
+    (Non registrarti se ti sei iscrittx l'anno scorso, 
     ma paga solo l'anno nuovo (10€)! 
     ATTENZIONE: deve trattarsi di una transazione diversa 
     da quella del soggiorno.)
     @endif
     
     @else
-Invoice for {{ $conto->nome }}
+
+    Invoice for {{ $conto->nome }}
     ==========================
     
     
@@ -139,11 +154,25 @@ Invoice for {{ $conto->nome }}
     --------------------------
     💰 Total due:  €{{ number_format($tot, 2) }}
     --------------------------
-    
 
+    Payment methods:
+
+    Paypal:
+    <a href="https://www.paypal.com/paypalme/habitattt">https://www.paypal.com/paypalme/habitattt</a>
+    (If possible: Select payment for friends :))
+
+    Bank transfer:
+    To: DISTRETTO A APS
+
+    IBAN: IT88Q0623023704000030225469
+    Reason: Offer for association
+
+    ==========================
 
     🙏 If you attended events with free donations, 
     please consider contributing more :)
+
+    ==========================
     
     @if (! $conto->pagato_iscrizione)
 ⚠️ Please register and pay the subscription
