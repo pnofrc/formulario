@@ -20,11 +20,7 @@
 <body>
     <h1>Origini Future :: Rumore < b > @ Habitat 2025</h1>
 
-    @if(session('success'))
-        <div style="color: green; font-weight: bold;">
-            {{ session('success') }}
-        </div>
-    @endif
+
 
 
     <form method="POST" action="{{ route('iscrizione.store') }}" x-data="formData()">
@@ -97,7 +93,7 @@
 
                                 <div class="box">
                                     <p>40 euro ingresso festival + 40 euro cibo: <strong>€80</strong></p>
-                                    <a href="https://paypal.me/tuolink/80" target="_blank" class="link">Paga con PayPal</a>
+                                    <a href="https://paypal.me/rumoreb/80" target="_blank" class="link">Paga con PayPal</a>
                                 </div>
 
                         </div>
@@ -108,7 +104,7 @@
                             <p>40 euro ingresso festival: <strong>€40</strong></p>
 
                             <template>
-                                <a href="https://paypal.me/tuolink/40" target="_blank" class="link">Paga con PayPal</a>
+                                <a href="https://paypal.me/rumoreb/40" target="_blank" class="link">Paga con PayPal</a>
                             </template>
 
                          
@@ -119,6 +115,13 @@
         </template>
 
         <br>
+
+            @if(session('success'))
+        <div style="color: green; font-weight: bold;">
+            {{ session('success') }}
+        </div>
+    @endif
+    
         <button type="submit">Invia</button>
     </form>
 

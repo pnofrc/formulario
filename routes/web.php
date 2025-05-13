@@ -52,5 +52,5 @@ Route::post('/iscrizione', function (Request $request) {
 
     Rumore::create($data);
 
-    return redirect()->route('iscrizione.form')->with('success', '<h1>Iscrizione inviata con successo!</h1>');
+    return redirect()->route('iscrizione.form')->with('success', 'Iscrizione inviata con successo!');
 })->name('iscrizione.store');
