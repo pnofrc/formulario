@@ -194,19 +194,16 @@ Conto per {{ $conto->nome }}
         $tot = 0;
         switch ($conto->tipologia_stanza) {
             case 'camerata':
-                $tot += 20 * $giorni * $guests;
+                $tot += 25 * $giorni * $guests;
                 break;
             case 'cameratina':
-                if ($giorni >= 12) $tot += 25 * $giorni * $guests;
-                elseif ($giorni >= 1) $tot += 30 * $giorni * $guests;
+                 $tot += 30 * $giorni * $guests;
                 break;
             case 'camerella':
                 if ($guests == 2) {
-                    if ($giorni >= 20) $tot += 40 * $giorni;
-                    elseif ($giorni >= 1) $tot += 50 * $giorni;
+                    $tot += 55 * $giorni;
                 } elseif ($guests == 1) {
-                    if ($giorni >= 20) $tot += 25 * $giorni;
-                    elseif ($giorni >= 1) $tot += 30 * $giorni;
+                    $tot += 30 * $giorni;
                 }
                 break;
         }
