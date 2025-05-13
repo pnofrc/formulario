@@ -58,10 +58,6 @@ class ContoResource extends Resource
                         ->label('Conto in italiano?')
                         ->default(true),
         
-                    Forms\Components\Toggle::make('pagato_iscrizione')
-                        ->label('Iscrizione pagata?')
-                        ->default(false),
-        
                     Forms\Components\Toggle::make('paga_ospitalita')
                         ->label('Paga dormire')
                         ->default(true)
