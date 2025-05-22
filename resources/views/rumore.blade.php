@@ -54,7 +54,7 @@
 <body>
     <h1>Origini Future :: Rumore < b> @ Habitat 2025</h1>
 
-    <a href="en">Change in english!</a>
+    <a href="/iscrizioneRumore2025/en">Change in english!</a>
 
     <form method="POST" action="{{ route('iscrizione.store') }}" x-data="formData()">
         @csrf
