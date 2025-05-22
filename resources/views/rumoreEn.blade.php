@@ -76,7 +76,7 @@
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
            Have you registered and paid the Habitat Association (Distretto A)?
         </label>
-        <div><small>The membership card costs €10 and must be paid upon registration :) Do it immediately! <a
+        <div><small>The membership card costs 10€ and must be paid at registration  :) Do it immediately! <a
                     href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">Register clicking here</a></small></div>
         <br>
 
@@ -84,13 +84,14 @@
 
         <label>
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
-           Would you like to volunteer at the Origini Future festival?
+          Would you be interested in volunteering at the Origini Future Festival?
             <br><br>
             <i>
-                Arrival at Cà dei Monti: between July 16 and July 17 <br>
-                <b>Things to do</b>: help with installations, kitchen, workshop and space management <br>
+                Arrival at Cà dei Monti: between Mon. July 14 and Thurs. July 17 depending on the type of support <br>
+                <b>Things to do</b>: help with installations, cooking, running workshops and spaces <br>
 
-            In return for your help: discounted festival entry €10</i>
+           To thank you for your help: reduced entrance to the festival (10€)
+We will contact you as soon as possible by email as possible to arrange :)</i>
 
         </label>
         
@@ -100,13 +101,13 @@
 
                     <label>
                         <input type="checkbox" x-model="cibo" name="cibo" value="1">
-                        Would you like breakfast/lunch/dinner included from Friday to Sunday?<br>
+                        Would you like to include breakfast, lunch, and dinner from Friday to Sunday?<br>
 
                     </label>
 
-                    <div>Note: Meal cost Fri–Sun: 45 euro<br>
-                       Important: You can bring your own food and drinks, but <b>camping stoves are not allowed!</b> The nearest town is a 20-minute drive for supplies. <br>
-                       Also: For logistical reasons, the meal package is only available for the full duration of the festival — single meals cannot be purchased!<br>
+                    <div>NB. The cost for meals over the weekend is €45 (from Friday lunch to Sunday lunch).<br>
+                       NBB: You’re welcome to bring your own food and drinks, <b>cbut camping stoves are not allowed.</b> The nearest small town for supplies is a 20-minute drive away. <br>
+                      NBBB: For logistical reasons, meals are only available as a full package for the duration of the festival — individual meals cannot be purchased separately.<br>
                     </div>
 
 
@@ -116,15 +117,14 @@
 
             <div>
 
-                <label>If you have allergies, intolerances, or specific diets (vegan/vegetarian, etc.), please write them below:</label><br>
+                <label>If you have allergies, intolerances, or are vegan, please write it down below:<br>
+                Note: All meals provided are fully vegetarian</label><br>
                 <input type="text" name="intolleranze"><br><br>
 
-                 <a href="mailto:">Thanks for your interest!
-                    Send an email <b>first</b>to rumore.b.b@gmail.com to apply (limited spots – applications will be considered in order of receipt and date availability).</a>
 
                 <div class="box">
-                    <p>10 euro ingresso festival + 45 euro cibo: <strong>€55</strong></p>
-                    <a href="https://paypal.me/rumoreb/55" target="_blank" class="link">Paga con PayPal</a>
+                    <p>€10 festival entry + €45 food: <strong>€55</strong></p>
+                    <a href="https://paypal.me/rumoreb/55" target="_blank" class="link">Pay with PayPal</a>
                 </div>
 
             </div>
@@ -132,7 +132,8 @@
 
         <template x-if="cibo && !volontari">
             <div>
-                <label>If you have allergies, intolerances, or specific diets (vegan/vegetarian, etc.), please write them below:</label><br>
+                <label>If you have allergies, intolerances, or are vegan, please write it down below:<br>
+                Note: All meals provided are fully vegetarian</label><br>
                 <input type="text" name="intolleranze"><br><br>
 
                 <div class="box">
@@ -144,16 +145,9 @@
         </template>
 
         <template x-if="volontari && !cibo">
-      
 
             <div class="box">
-
-
-                 <a href="mailto:">Thanks for your interest!
-                    Send an email <b>first</b>to rumore.b.b@gmail.com to apply (limited spots – applications will be considered in order of receipt and date availability).</a>
-
-
-                <p>10 festival entry: <strong>€10</strong></p>
+                <p>€10 festival entry: <strong>€10</strong></p>
                 <a href="https://paypal.me/rumoreb/10" target="_blank" class="link">Pay with PayPal</a>
             </div>
         </template>

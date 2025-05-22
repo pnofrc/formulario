@@ -85,9 +85,11 @@
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
             Vuoi partecipare al festival Origini Future come volontariə?
             <br><br>
-            <i>Arrivo a Cà dei Monti: tra lun. 14 e merc. 16 luglio <br>
-                <b>Cose da fare</b>: aiuto con installazioni, cucina, gestione workshop e spazi<br>
-                Per ringraziarti dell’aiuto: ingresso ridotto al festival (10€)<br></i>
+            <i>
+Arrivo a Cà dei Monti: tra lunedì 14 e giovedì 17 luglio, a seconda del tipo di supporto. <br>
+Cose da fare: aiutare con le installazioni, cucinare, gestire workshop e spazi.<br>
+Per ringraziarti del tuo aiuto: ingresso ridotto al festival (10€).<br>
+Ti contatteremo al più presto via email per organizzarci :)</i>
 
         </label>
         
@@ -97,17 +99,14 @@
 
                     <label>
                         <input type="checkbox" x-model="cibo" name="cibo" value="1">
-                        Vuoi avere comprese colazioni/pranzi/cene tra venerdi e domenica?<br>
+                        Vuoi includere colazione, pranzo e cena da venerdì a domenica?<br>
 
                     </label>
 
-                    <div>NB. Costo pasti ven-dom: 45 euro<br>
-                        NBB. Si possono portare cibo e bere da casa, ma <b>non si possono usare fornelli da
-                            campeggio!</b> <br>
-                        Il paesino più vicino è a 20 minuti di macchina per eventuali rifornimenti. <br>
-                        NBBB. Per motivi logistici, offriamo un pacchetto cibo solo per tutta la durata del festival,
+                    <div>NB. Il costo per i pasti durante il weekend è di 45 € (dal pranzo di venerdì al pranzo di domenica).<br>
+                        NBB. Sei libero di portare cibo e bevande da casa, <b>ma i fornellini da campeggio non sono ammessi.</b> Il paese più vicino per eventuali rifornimenti è a 20 minuti di auto.<br>
                         <br>
-                        quindi non sarà possibile comprare i pasti singolarmente!<br>
+                        NBBB.  Per ragioni logistiche, i pasti sono disponibili solo come pacchetto completo per tutta la durata del festival — non è possibile acquistare i pasti singolarmente.
                     </div>
 
 
@@ -117,12 +116,12 @@
 
             <div>
 
-                <label>Se hai allergie, intolleranze, diete specifiche (veganə/vegetarianə..) scrivilo qua
-                    sotto:</label><br>
+                <label>Se hai allergie, intolleranze o segui una dieta vegana, ti preghiamo di indicarlo qui sotto.
+                <br>
+                Nota: Tutti i pasti offerti sono completamente vegetariani.
+                </label><br>
                 <input type="text" name="intolleranze"><br><br>
 
-                 <a href="mailto:">Grazie! Per favore scrivici una mail immediatamente! (Ma invia il form in ogni
-                    caso)</a>
 
                 <div class="box">
                     <p>10 euro ingresso festival + 45 euro cibo: <strong>€55</strong></p>
@@ -134,8 +133,10 @@
 
         <template x-if="cibo && !volontari">
             <div>
-                <label>Se hai allergie, intolleranze, diete specifiche (veganə/vegetarianə..) scrivilo qua
-                    sotto:</label><br>
+                <label>Se hai allergie, intolleranze o segui una dieta vegana, ti preghiamo di indicarlo qui sotto.
+                <br>
+                Nota: Tutti i pasti offerti sono completamente vegetariani.
+                </label><br>
                 <input type="text" name="intolleranze"><br><br>
 
                 <div class="box">
@@ -150,8 +151,6 @@
       
 
             <div class="box">
-
-            <a href="mailto:">Grazie! Per favore scrivici una mail immediatamente! (Ma invia il form in ogni caso)</a>
 
 
                 <p>10 euro ingresso festival: <strong>€10</strong></p>
