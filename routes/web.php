@@ -22,6 +22,10 @@ Route::get('/iscrizioneRumore2025', function () {
     return view('rumore'); 
 })->name('iscrizione.form');
 
+Route::get('/iscrizioneRumore2025/en', function () {
+    return view('rumoreEn'); 
+})->name('iscrizione.form');
+
 Route::post('/iscrizione', function (Request $request) {
     $data = $request->validate([
         'nome' => 'required|string|max:255',

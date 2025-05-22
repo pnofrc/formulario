@@ -19,7 +19,7 @@
     $arrivo =  Carbon::parse($conto->data_arrivo);
     $partenza =  Carbon::parse($conto->data_partenza);
     $giorni = $arrivo->diffInDays($partenza);
-
+$guests = $conto->numero_ospiti;
     @endphp
     
     @if ($it)
@@ -27,16 +27,15 @@ Conto per {{ $conto->nome }}
     
     ==========================
 
-    
-    @if (! $conto->paga_ospitalita)
+    🍽️ Cibo ({{ $giorni }} giorni): 
+    €{{ number_format(($conto->costo_pasto_giornaliero ?? 0) * $giorni * $guests, 2) }}
 
-🍽️ Cibo ({{ $giorni }} giorni): 
-    €{{ number_format(($conto->costo_pasto_giornaliero ?? 0) * $giorni, 2) }}
-    @else
+    (Preferibilmente in contanti..!)
 
-    🛏️ Pernottamento 
-    {{ $conto->tipologia_stanza }}, {{ $conto->numero_ospiti }} ospite/i, {{ $giorni }} notti: 
+    @if ($conto->paga_ospitalita)
+==========================
 
+    🛏️ {{ $conto->tipologia_stanza }}, {{ $conto->numero_ospiti }} ospite/i, {{ $giorni }} notti: 
     €{{ number_format(permanenza($conto, $giorni), 2) }}
     
 
@@ -68,16 +67,16 @@ Conto per {{ $conto->nome }}
 
     $tot += totale_extra($conto->eventi_extra ?? [], $guests);
     @endphp
-
-    --------------------------
-    💰 Totale da versare: €{{ number_format($tot, 2) }}
+💰 Contributo ospitalità: €{{ number_format($tot, 2) }}
     --------------------------
     
-    Metodi di pagamento:
+    Possibili metodi di pagamento:
+
+    Contanti :D
 
     Paypal:
     <a href="https://www.paypal.com/paypalme/habitattt">https://www.paypal.com/paypalme/habitattt</a>
-    (Se possibile: Seleziona pagamento per amici :))
+    (Se possibile: Seleziona pagamento per amici :)
        
 
     Trasferimento bancario: 
@@ -100,11 +99,6 @@ Conto per {{ $conto->nome }}
     Distretto A (la transazione deve 
     essere un pagamento differente):  
     <a href="https://forms.gle/o531HuN5Rt7XyVzJ7">https://forms.gle/o531HuN5Rt7XyVzJ7</a>
-
-    (Non registrarti se ti sei iscrittx l'anno scorso, 
-    ma paga solo l'anno nuovo (10€)! 
-    ATTENZIONE: deve trattarsi di una transazione diversa 
-    da quella del soggiorno.)
     @endif
     
     @else
@@ -112,29 +106,25 @@ Conto per {{ $conto->nome }}
     Invoice for {{ $conto->nome }}
     ==========================
     
+
     
-    
-    @if (! $conto->paga_ospitalita)
-🍽️ Food ({{ $giorni }} days): 
-    €{{ number_format(($conto->costo_pasto_giornaliero ?? 0) * $giorni, 2) }}
-    @else
-🛏️ Stay ({{ $conto->tipologia_stanza }}, {{ $conto->numero_ospiti }} guest(s), {{ $giorni }} nights): 
+    🍽️ Food ({{ $giorni }} days) : 
+    €{{ number_format(($conto->costo_pasto_giornaliero ?? 0) * $giorni  * $guests, 2) }}
+
+     @if ($conto->paga_ospitalita)
+==========================
+
+    🛏️ ({{ $conto->tipologia_stanza }}, {{ $conto->numero_ospiti }} guest(s), {{ $giorni }} nights): 
     €{{ number_format(permanenza($conto,$giorni), 2) }}
     
-    @if ($conto->paga_biancheria)
-🧺 Bed linen: €{{ number_format(5 * $conto->numero_ospiti, 2) }}
     @endif
-    @endif
-    
-    
+
     @if (count($conto->eventi_extra ?? []))
 🎟️ Extra events: (x{{ $conto->numero_ospiti }} guest/s):
     @foreach ($conto->eventi_extra as $evento)
     - {{ $evento['descrizione'] }}: €{{ number_format($evento['costo'] * $conto->numero_ospiti, 2) }}
     @endforeach
     @endif
-
-
     @php
     $tot = 0;
     $guests = $conto->numero_ospiti;
@@ -150,22 +140,22 @@ Conto per {{ $conto->nome }}
 
     $tot += totale_extra($conto->eventi_extra ?? [], $guests);
     @endphp
-
-    --------------------------
-    💰 Total due:  €{{ number_format($tot, 2) }}
+    💰 Hospitality contribution:  €{{ number_format($tot, 2) }}
     --------------------------
 
     Payment methods:
 
+    Cash :D
+
     Paypal:
     <a href="https://www.paypal.com/paypalme/habitattt">https://www.paypal.com/paypalme/habitattt</a>
-    (If possible: Select payment for friends :))
+    (If possible: Select payment for friends :)
 
     Bank transfer:
     To: DISTRETTO A APS
 
     IBAN: IT88Q0623023704000030225469
-    Reason: Offer for association
+    Object: Offer for association
 
     ==========================
 
@@ -176,34 +166,32 @@ Conto per {{ $conto->nome }}
     
     @if (! $conto->pagato_iscrizione)
 ⚠️ Please register and pay the subscription
-    to our association Distretto A:
+    to our association Distretto A  
+    (PAY ATTENTION: It has to be a different transaction 
+    rather than the staying):
     <a href="https://forms.gle/o531HuN5Rt7XyVzJ7">https://forms.gle/o531HuN5Rt7XyVzJ7</a>
-
-    (don't register if you subscribed the last year, 
-    but pay the new year (10€)! 
-    PAY ATTENTION: It has to be a different transaction 
-    rather than the staying.)
+   
     @endif
 
     @endif
     </pre>
     
-    @php
+    {{-- @php
     function permanenza($conto, $giorni) {
         $guests = $conto->numero_ospiti ?? 1;
         $tot = 0;
         switch ($conto->tipologia_stanza) {
             case 'camerata':
-                $tot += 25 * $giorni * $guests;
+                $tot += 20 * $giorni * $guests;
                 break;
             case 'cameratina':
-                 $tot += 30 * $giorni * $guests;
+                 $tot += 25 * $giorni * $guests;
                 break;
             case 'camerella':
                 if ($guests == 2) {
-                    $tot += 55 * $giorni;
+                    $tot += 45 * $giorni;
                 } elseif ($guests == 1) {
-                    $tot += 30 * $giorni;
+                    $tot += 25 * $giorni;
                 }
                 break;
         }
@@ -222,7 +210,7 @@ Conto per {{ $conto->nome }}
     return $totale;
 }
 
-    @endphp
+    @endphp --}}
 
     </body>
     </html>
