@@ -58,7 +58,7 @@
 </head>
 
 <body>
-    <h1>Origini Future :: Rumore < b> @ Habitat 18-20 Jul 2025</h1>
+    <h1>Origini Future :: rumore b @ Habitat 18-20 Jul 2025</h1>
 
     <a href="/iscrizioneRumore2025/en">Cambia in italiano!</a>
 
@@ -114,8 +114,7 @@ the card is required to access the spaces at Ca’ dei Monti. to get one, click 
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
 📌 into communal creative jamming and want to help in building up for the days leading up to the festival ? feel inspired for some chop chop in the rumore veg kitchen or for other tasks we haven’t even thought of yet ? ORIGINI FUTURE isn’t  possible without you. Check the box here if you want to help in running the festival as a volunteer (and see your ticket price dropping down from 40€ to 10€ as a thank you for you help :)).            <br><br>
             <i>
-                Arrival at Cà dei Monti: between Mon. July 14 and Thurs. July 17 depending on the type of support <br>
-                <b>Things to do</b>: help with installations, cooking, running workshops and spaces <br></i>
+                We will contact you soon :)</i>
 
         </label>
 
@@ -145,8 +144,8 @@ the card is required to access the spaces at Ca’ dei Monti. to get one, click 
 
 
                     <div class="box">
-                        <p>10 euro entrance festival + 45 euro foos: <strong>€55</strong></p>
-                        <a href="https://paypal.me/rumoreb/55" target="_blank" class="link">Paga con PayPal</a>
+                        <p>10 euro entrance festival + 40 euro foos: <strong>€50</strong></p>
+                        <a href="https://paypal.me/rumoreb/50" target="_blank" class="link">Paga con PayPal</a>
                     </div>
 
                 </div>
@@ -161,8 +160,8 @@ the card is required to access the spaces at Ca’ dei Monti. to get one, click 
                     <input type="text" name="intolleranze"><br><br>
 
                     <div class="box">
-                        <p>40 euro entrance festival + 45 euro food: <strong>€85</strong></p>
-                        <a href="https://paypal.me/rumoreb/85" target="_blank" class="link">Pay with PayPal</a>
+                        <p>40 euro entrance festival + 40 euro food: <strong>€80</strong></p>
+                        <a href="https://paypal.me/rumoreb/80" target="_blank" class="link">Pay with PayPal</a>
                     </div>
 
                 </div>

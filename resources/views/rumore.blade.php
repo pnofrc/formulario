@@ -58,7 +58,7 @@
 </head>
 
 <body>
-    <h1>Origini Future :: Rumore < b> @ Habitat 18-20 Lug 2025</h1>
+    <h1>Origini Future :: rumore b @ Habitat 18-20 Lug 2025</h1>
 
     <a href="/iscrizioneRumore2025/en">Change in english!</a>
 
@@ -112,8 +112,6 @@
             📌 hai energie creative per il building up i giorni prima del festival? ti senti ispirato per un po’ di chop chop in cucina o altri compiti che manco noi sappiamo? ORIGINI FUTURE non funziona senza di voi, metti una x per dare una mano come volontariə (e abbassare il costo del ticket da 40€ a 10€).
             <br><br>
             <i>
-                Arrivo a Cà dei Monti: tra lunedì 14 e giovedì 17 luglio, a seconda del tipo di supporto. <br>
-                Cose da fare: aiutare con le installazioni, cucinare, gestire workshop e spazi.<br>
                 Ti contatteremo al più presto via email per organizzarci :)</i>
 
         </label>
@@ -146,8 +144,8 @@
 
 
                     <div class="box">
-                        <p>10 euro ingresso festival + 45 euro cibo: <strong>€55</strong></p>
-                        <a href="https://paypal.me/rumoreb/55" target="_blank" class="link">Paga con PayPal</a>
+                        <p>10 euro ingresso festival + 40 euro cibo: <strong>€50</strong></p>
+                        <a href="https://paypal.me/rumoreb/50" target="_blank" class="link">Paga con PayPal</a>
                     </div>
 
                 </div>
@@ -162,8 +160,8 @@
                     <input type="text" name="intolleranze"><br><br>
 
                     <div class="box">
-                        <p>40 euro ingresso festival + 45 euro cibo: <strong>€85</strong></p>
-                        <a href="https://paypal.me/rumoreb/85" target="_blank" class="link">Paga con PayPal</a>
+                        <p>40 euro ingresso festival + 40 euro cibo: <strong>€80</strong></p>
+                        <a href="https://paypal.me/rumoreb/80" target="_blank" class="link">Paga con PayPal</a>
                     </div>
 
                 </div>
