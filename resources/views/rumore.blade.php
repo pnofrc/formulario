@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Origini Future</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://unpkg.com/alpinejs" defer></script>
+
     <style>
         .link {
             color: blue;
@@ -27,14 +27,20 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        form{
+        form, .container{
             width: 75%;
         }
 
-        @media only screen and (max-width: 600px) {
-          form{
-            width: 90%;
+        .quote{
+            text-align: right;
+            display: block;
+            width: 100%;
         }
+
+        @media only screen and (max-width: 600px) {
+            form {
+                width: 90%;
+            }
         }
 
         input[type=text],
@@ -52,9 +58,28 @@
 </head>
 
 <body>
-    <h1>Origini Future :: Rumore < b> @ Habitat 2025</h1>
+    <h1>Origini Future :: Rumore < b> @ Habitat 18-20 Lug 2025</h1>
 
     <a href="/iscrizioneRumore2025/en">Change in english!</a>
+
+    <div class="container">
+    <p>Carə umanə benvenutə al form di iscrizione/pagamento/prenotazioni pasti di ORIGINI FUTURE 25  ✨✨</p>
+    <p>Per partire, il micro-festival è pensato come un esperimento comunitario, dove il confine tra partecipantə, artistə e organizzatorə si dissolve. siamo dichiaratamente non a scopo di lucro e le cifre richieste servono esclusivamente per ripagare le spese di realizzazione, speriamo vengano comprese :)</p>
+
+    <p>🎫 il sistema di ticketing prevede un ingresso unico di 40€ che comprende:
+        <ul>
+            <li>acceso al festival ed utilizzo spazi esterni di Ca’ de monti, da mattina venerdì 18 a Domenica 20 luglio inclusi</li>
+            <li>accesso a workshops e musica</li>
+            <li>posto tenda e uso bagni e docce esterne</li>
+            <li> acqua potabile</li>
+        </ul>
+    </p>
+    <p>è necessaria inoltre, la tessera associativa Habitat ad un costo di 10€.</p>
+    <br>
+    <i class="quote">a costruirlo insieme, <br>
+    dolci baci.</i>
+    <br><br>
+    </div>
 
     <form method="POST" action="{{ route('iscrizione.store') }}" x-data="formData()">
         @csrf
@@ -73,9 +98,10 @@
 
         <label>
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
-            Ti sei iscrittə e pagatə l'associazione di Habitat (Distretto A)?
+            📌 metti la x se sei in possesso di tessera associativa Habitat. <br>
+        La tessera è necessaria per poter usare gli spazi di Ca’ de monti. Per iscriversi clicca qui, e poi torna a mettere la x (obbligatoria) dopo esserti iscrittə.
         </label>
-        <div><small>La tessera associativa ha un costo di 10€ e va versata all'iscrizione :) Fallo immediatamente! <a
+        <div><small><a
                     href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">Iscriviti cliccando qua</a></small></div>
         <br>
 
@@ -83,98 +109,97 @@
 
         <label>
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
-            Vuoi partecipare al festival Origini Future come volontariə?
+            📌 hai energie creative per il building up i giorni prima del festival? ti senti ispirato per un po’ di chop chop in cucina o altri compiti che manco noi sappiamo? ORIGINI FUTURE non funziona senza di voi, metti una x per dare una mano come volontariə (e abbassare il costo del ticket da 40€ a 10€).
             <br><br>
             <i>
-Arrivo a Cà dei Monti: tra lunedì 14 e giovedì 17 luglio, a seconda del tipo di supporto. <br>
-Cose da fare: aiutare con le installazioni, cucinare, gestire workshop e spazi.<br>
-Per ringraziarti del tuo aiuto: ingresso ridotto al festival (10€).<br>
-Ti contatteremo al più presto via email per organizzarci :)</i>
+                Arrivo a Cà dei Monti: tra lunedì 14 e giovedì 17 luglio, a seconda del tipo di supporto. <br>
+                Cose da fare: aiutare con le installazioni, cucinare, gestire workshop e spazi.<br>
+                Ti contatteremo al più presto via email per organizzarci :)</i>
 
         </label>
-        
+
         <br><br>
 
-                <div class="box" x-data="{ cibo: true }">
+        <div class="box">
 
-                    <label>
-                        <input type="checkbox" x-model="cibo" name="cibo" value="1">
-                        Vuoi includere colazione, pranzo e cena da venerdì a domenica?<br>
+            <label>
+                <input type="checkbox" x-model="cibo" name="cibo" value="1">
+                📌 ORIGINI FUTURE sarà anche cucina e buon cibo. In ottica anti spreco, chiediamo la prenotazione e pagamento dei pasti anticipati. La cucina sarà vegetariana, ed ha un costo unico di 40€. Comprende dal pranzo del venerdì al pranzo della domenica (7 pasti, meno di 6€/cada uno!), indipendentemente dal momento di arrivo. metti una x se vuoi includere.<br>
 
-                    </label>
+            </label>
 
-                    <div>NB. Il costo per i pasti durante il weekend è di 45 € (dal pranzo di venerdì al pranzo di domenica).<br>
-                        NBB. Sei libero di portare cibo e bevande da casa, <b>ma i fornellini da campeggio non sono ammessi.</b> Il paese più vicino per eventuali rifornimenti è a 20 minuti di auto.<br>
+            <div>
+                NB si è liberə di portare il proprio cibo da casa e di raggiungere la prima cittadina a 20min di macchina ! vietati però fornelli e fuochi per rischio incendio.
+            </div>
+
+            <br>
+            <br>
+
+            <template x-if="cibo && volontari">
+
+                <div>
+                    <label>Indica qui se hai allergie, intolleranze o diete particolari. 
                         <br>
-                        NBBB.  Per ragioni logistiche, i pasti sono disponibili solo come pacchetto completo per tutta la durata del festival — non è possibile acquistare i pasti singolarmente.
+                        Nota: Tutti i pasti offerti sono completamente vegetariani.
+                    </label><br>
+                    <input type="text" name="intolleranze"><br><br>
+
+
+                    <div class="box">
+                        <p>10 euro ingresso festival + 45 euro cibo: <strong>€55</strong></p>
+                        <a href="https://paypal.me/rumoreb/55" target="_blank" class="link">Paga con PayPal</a>
                     </div>
 
+                </div>
+            </template>
 
-        <br><br>
+            <template x-if="cibo && !volontari">
+                <div>
+                    <label>Indica qui se hai allergie, intolleranze o diete particolari. 
+                        <br>
+                        Nota: Tutti i pasti offerti sono completamente vegetariani.
+                    </label><br>
+                    <input type="text" name="intolleranze"><br><br>
 
-        <template x-if="cibo && volontari">
+                    <div class="box">
+                        <p>40 euro ingresso festival + 45 euro cibo: <strong>€85</strong></p>
+                        <a href="https://paypal.me/rumoreb/85" target="_blank" class="link">Paga con PayPal</a>
+                    </div>
 
-            <div>
+                </div>
+            </template>
 
-                <label>Se hai allergie, intolleranze o segui una dieta vegana, ti preghiamo di indicarlo qui sotto.
-                <br>
-                Nota: Tutti i pasti offerti sono completamente vegetariani.
-                </label><br>
-                <input type="text" name="intolleranze"><br><br>
+            <template x-if="volontari && !cibo">
 
 
                 <div class="box">
-                    <p>10 euro ingresso festival + 45 euro cibo: <strong>€55</strong></p>
-                    <a href="https://paypal.me/rumoreb/55" target="_blank" class="link">Paga con PayPal</a>
+
+
+                    <p>10 euro ingresso festival: <strong>€10</strong></p>
+                    <a href="https://paypal.me/rumoreb/10" target="_blank" class="link">Paga con PayPal</a>
                 </div>
+            </template>
 
-            </div>
-        </template>
-
-        <template x-if="cibo && !volontari">
-            <div>
-                <label>Se hai allergie, intolleranze o segui una dieta vegana, ti preghiamo di indicarlo qui sotto.
-                <br>
-                Nota: Tutti i pasti offerti sono completamente vegetariani.
-                </label><br>
-                <input type="text" name="intolleranze"><br><br>
-
+            <template x-if="!cibo && !volontari">
                 <div class="box">
-                    <p>40 euro ingresso festival + 45 euro cibo: <strong>€85</strong></p>
-                    <a href="https://paypal.me/rumoreb/85" target="_blank" class="link">Paga con PayPal</a>
+                    <p>40 euro ingresso festival: <strong>€40</strong></p>
+                    <a href="https://paypal.me/rumoreb/40" target="_blank" class="link">Paga con PayPal</a>
+
                 </div>
-
-            </div>
-        </template>
-
-        <template x-if="volontari && !cibo">
-      
-
-            <div class="box">
-
-
-                <p>10 euro ingresso festival: <strong>€10</strong></p>
-                <a href="https://paypal.me/rumoreb/10" target="_blank" class="link">Paga con PayPal</a>
-            </div>
-        </template>
-
-        <template x-if="!cibo && !volontari">
-            <div class="box">
-                <p>40 euro ingresso festival: <strong>€40</strong></p>
-                <a href="https://paypal.me/rumoreb/40" target="_blank" class="link">Paga con PayPal</a>
-
-            </div>
-        </template>
+            </template>
 
         </div>
+
+        <p>Sappiamo essere tempi difficili per spendere soldi nel divertimento. abbiamo tentato il massimo per contenere i prezzi di ticketing e cucina. 
+            <br>Se per te non è sufficiente, sentiti liber di contattarci privatamente a rumore.b.b@gmail.com, felici di aiutare :) </p>
         </div>
 
         <br>
 
-        @if(session('success'))
-        <div style="color: green; font-weight: bold;">
-            {{ session('success') }}
-        </div>
+        @if (session('success'))
+            <div style="color: green; font-weight: bold;">
+                {{ session('success') }}
+            </div>
         @endif
 
         <button type="submit">Invia</button>
