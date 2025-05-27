@@ -41,11 +41,17 @@ Route::post('/iscrizione', function (Request $request) {
 
     $costo = 0;
 
-    if (!($data['volontari'] ?? false)) {
+    if (!($data['volontari'])) {
         if (($data['cibo'] ?? false)) {
             $costo = 80;
         } else {
             $costo = 40;
+        }
+    } else {
+        if (($data['cibo'] ?? false)) {
+            $costo = 50;
+        } else {
+            $costo = 10;
         }
     }
 

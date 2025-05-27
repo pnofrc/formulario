@@ -74,7 +74,7 @@
             <li>drinking water </li>
         </ul>
     </p>
-    <p>you’ll also need a Habitat association card, which costs €10.</p>
+    <p>you’ll also need a Habitat association card 2025, which costs €10.</p>
     <br>
 
     <i class="quote">

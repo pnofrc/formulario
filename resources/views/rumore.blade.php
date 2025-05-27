@@ -74,7 +74,7 @@
             <li> acqua potabile</li>
         </ul>
     </p>
-    <p>è necessaria inoltre, la tessera associativa Habitat ad un costo di 10€.</p>
+    <p>è necessaria inoltre, la tessera associativa Habitat 2025 ad un costo di 10€.</p>
     <br>
     <i class="quote">a costruirlo insieme, <br>
     dolci baci.</i>
