@@ -75,6 +75,7 @@
         </ul>
     </p>
     <p>è necessaria inoltre, la tessera associativa Habitat 2025 ad un costo di 10€.</p>
+    <p>qui sotto infine, si trova la sezione dedicata al partecipare come VOLONTARI (abbiam bisogno della nostra comunità, e il ticket diventa ridotto!), e soprattutto CUCINA: in ottica anti-spreco e buona programmazione del lavoro (grande sfida per noi cucinare per 100+ persone), i pasti sono da acquistare IN ANTICIPO qui giù, non sarà possibile acquistare in loco !!</p>
     <br>
     <i class="quote">a costruirlo insieme, <br>
     dolci baci.</i>
@@ -109,7 +110,7 @@
 
         <label>
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
-            📌 hai energie creative per il building up i giorni prima del festival? ti senti ispirato per un po’ di chop chop in cucina o altri compiti che manco noi sappiamo? ORIGINI FUTURE non funziona senza di voi, metti una x per dare una mano come volontariə (e abbassare il costo del ticket da 40€ a 10€).
+📌 hai energie creative per il building up i giorni prima del festival? ti senti ispirato per un po’ di chop chop in cucina o altri compiti che manco noi sappiamo ? ORIGINI FUTURE non funzia senza di voi, metti una x per dare una mano come VOLONTARIO/A (e abbassare il costo del ticket da 40€ a 10€).
             <br><br>
             <i>
                 Ti contatteremo al più presto via email per organizzarci :)</i>
@@ -122,12 +123,13 @@
 
             <label>
                 <input type="checkbox" x-model="cibo" name="cibo" value="1">
-                📌 ORIGINI FUTURE sarà anche cucina e buon cibo. In ottica anti spreco, chiediamo la prenotazione e pagamento dei pasti anticipati. La cucina sarà vegetariana, ed ha un costo unico di 40€. Comprende dal pranzo del venerdì al pranzo della domenica (7 pasti, meno di 6€/cada uno!), indipendentemente dal momento di arrivo. metti una x se vuoi includere.<br>
+               📌 ORIGINI FUTURE sarà anche buon cibo 🫕🥬 <br> per evitare sprechi, chiediamo prenotazione/pagamento ORA!
+              <br><br>un po’ di info:  la cucina sarà vegetariana, prevede serviti 3 pasti + merdende giornalieri dal pranzo del venerdì al pranzo della domenica compresi,. indipendentemente dal momento di arrivo, il costo è unico di 40€ (7 pasti, meno di 6€/cada uno! + merende 🧃🧃). Non sarà possibile acquistare lì per lì !! metti una x se vuoi includere.
 
             </label>
 
             <div>
-                NB si è liberə di portare il proprio cibo da casa e di raggiungere la prima cittadina a 20min di macchina ! vietati però fornelli e fuochi per rischio incendio.
+                NB in alternativa si è liberə di portare il proprio cibo da casa e/o di raggiungere la prima cittadina a 20min di macchina, non comodo ma possibile! <b>vietati però fornelli e fuochi per rischio incendio.</b>
             </div>
 
             <br>

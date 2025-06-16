@@ -75,6 +75,7 @@
         </ul>
     </p>
     <p>you’ll also need a Habitat association card 2025, which costs €10.</p>
+    <p>below, you’ll find the section to join as a VOLUNTEER (we need our community, and the ticket price drops!), and most importantly KITCHEN: to avoid waste and plan well (big challenge for us cooking for 100+ people), meals must be purchased IN ADVANCE below — no on-site meal sales!! </p>
     <br>
 
     <i class="quote">
@@ -124,11 +125,14 @@ the card is required to access the spaces at Ca’ dei Monti. to get one, click 
 
             <label>
                 <input type="checkbox" x-model="cibo" name="cibo" value="1">
-            📌 ORIGINI FUTURE also means good food. to avoid waste, we ask that meals are booked and paid in advance. the cusine will be fully vegetarian, and the full cost is €40, covering every meal from Friday lunch to Sunday lunch (7 meals, less than €6 each!), regardless the moment of your arrival. check the box if you’d like to include meals.
+📌 ORIGINI FUTURE also means good food 🫕🥬  <br>
+to avoid waste, we kindly ask you to book/pay NOW!   <br> <br>
+a few deets: the kitchen will be vegetarian and serve 3 meals + snacks daily, from Friday lunch to Sunday lunch included. regardless of when you arrive, it’s a flat rate of €40 (that’s 7 meals, under €6 each! plus snacks 🧃🧃). meals won’t be available for purchase on site!! tick the box if you want in.  
+
             </label>
 
             <div>
-            NB. you’re free to bring your own food, or drive to the nearest town (20 minutes away). however, open flames and stoves are not allowed due to fire risk.            </div>
+            NB. PS: you’re free to bring your own food and/or drive to the nearest town (20 min by car – not ideal, but doable!). <b>no stoves or open flames allowed due to fire risk. </b>          </div>
 
             <br>
             <br>
