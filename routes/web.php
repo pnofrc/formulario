@@ -38,7 +38,7 @@ Route::post('/iscrizione', function (Request $request) {
         'intolleranze' => 'nullable|string|max:255',
     ]);
 
-
+    $data['volontari'] = $request->has('volontari');
     $costo = 0;
 
     if (!($data['volontari'])) {
@@ -57,7 +57,6 @@ Route::post('/iscrizione', function (Request $request) {
 
     $data['costo_totale'] = $costo;
     $data['pagato_iscrizione'] = $request->has('pagato_iscrizione');
-    $data['volontari'] = $request->has('volontari');
     $data['cibo'] = $request->has('cibo');
 
     Rumore::create($data);

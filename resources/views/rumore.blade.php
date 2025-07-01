@@ -100,7 +100,7 @@
         <label>
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
             📌 metti la x se sei in possesso di tessera associativa Habitat. <br>
-        La tessera è necessaria per poter usare gli spazi di Ca’ de monti. Per iscriversi clicca qui, e poi torna a mettere la x (obbligatoria) dopo esserti iscrittə.
+        La tessera è necessaria per poter usare gli spazi di Ca’ de monti. Per iscriversi clicca qui, e poi torna a mettere la x <h1>(obbligatoria)</h1> dopo esserti iscrittə.
         </label>
         <div><small><a
                     href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">Iscriviti cliccando qua</a></small></div>
