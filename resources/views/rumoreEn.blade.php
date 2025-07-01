@@ -102,7 +102,7 @@
         <label>
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
             📌 check this box if you already have a Habitat association card.
-the card is required to access the spaces at Ca’ dei Monti. to get one, click here to sign up, then come back and tick this box (it’s mandatory).
+the card is required to access the spaces at Ca’ dei Monti. to get one, click here to sign up, then come back and tick this box <h1>(it’s mandatory)</h1>.
 
         </label>
         <div><small><a
