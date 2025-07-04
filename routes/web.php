@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Conto;
 use App\Models\Rumore;
+use App\Models\ospitalita;
+use App\Http\Controllers\OspitalitaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
@@ -67,9 +69,44 @@ Route::post('/iscrizione', function (Request $request) {
 })->name('iscrizione.store');
 
 
-Route::get('/form2025', function () {
-    return view('form');
-})->name('form.form');
+// Route::get('/form2025', function () {
+//     return view('form');
+// });
+
+
+// Route::post('/form2025', function (Request $request) {
+//     // Validazione dei dati
+//     $data = $request->validate([
+//         'paga_ospitalita' => 'required|boolean',
+//         'numero_ospiti' => 'required|integer|min:1',
+//         'nomi' => 'required|array|min:1|max:' . $request->numero_ospiti,
+//         'nomi.*.nome' => 'required|string|max:255',
+//         'chi_sei' => 'nullable|string|max:255',
+//         'lingua_italiano' => 'required|boolean',
+//         'data_partenza' => 'nullable|date_format:Y-m-d',
+//         'data_arrivo' => 'nullable|date_format:Y-m-d',
+//         'tipologia_stanza' => 'nullable|string|in:camerata condivisa,camerella privata',
+//     ]);
+
+//     // Elaborazione dei dati (ad esempio, salvataggio nel DB, invio a un'email, ecc.)
+//     // Esempio: puoi fare il salvataggio su un modello se serve
+//     // O semplicemente restituire una risposta
+//     ospitalita::create($data);
+
+//     // Per ora restituiamo i dati con una risposta JSON per verifica
+//     return response()->json([
+//         'success' => true,
+//         'data' => $data
+//     ]);
+// });
+
+
+Route::get('/ciao', function() {
+    return view('ospitalita.create');
+})->name('ospitalita.create');
+
+Route::post('/ospitalita/store', [OspitalitaController::class, 'store'])->name('ospitalita.store');
+
 
 
 Route::get('/shifts', function () {
