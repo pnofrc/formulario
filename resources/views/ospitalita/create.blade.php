@@ -78,6 +78,12 @@
     <div class="container" x-data="ospitalitaForm()">
     <h1>A.A.A. Habitanti 2025 </h1>
 
+          @if (session('success'))
+             <div style="color: green; font-weight: bold; font-size: 3rem">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="lang-switch">
             <button type="button" @click="setLanguage('it')">🇮🇹 Italiano</button>
             <button type="button" @click="setLanguage('en')">🇬🇧 English</button>
