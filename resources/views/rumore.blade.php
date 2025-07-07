@@ -60,6 +60,12 @@
 <body>
     <h1>Origini Future :: rumore b @ Habitat 18-20 Lug 2025</h1>
 
+            @if (session('success'))
+             <div style="color: green; font-weight: bold; font-size: 3rem">
+                {{ session('success') }}
+            </div>
+        @endif
+
     <a href="/iscrizioneRumore2025/en">Change in english!</a>
 
     <div class="container">
@@ -193,12 +199,6 @@
         </div>
 
         <br>
-
-        @if (session('success'))
-             <div style="color: green; font-weight: bold; font-size: 3rem">
-                {{ session('success') }}
-            </div>
-        @endif
 
         <button type="submit">Invia</button>
     </form>

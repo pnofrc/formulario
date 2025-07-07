@@ -60,6 +60,13 @@
 <body>
     <h1>Origini Future :: rumore b @ Habitat 18-20 Jul 2025</h1>
 
+     @if (session('success'))
+            <div style="color: green; font-weight: bold; font-size: 3rem">
+                {{ session('success') }}
+            </div>
+        @endif
+
+
     <a href="/iscrizioneRumore2025/en">Cambia in italiano!</a>
 
     <div class="container">
@@ -196,12 +203,7 @@ a few deets: the kitchen will be vegetarian and serve 3 meals + snacks daily, fr
 
         <br>
 
-        @if (session('success'))
-            <div style="color: green; font-weight: bold; font-size: 3rem">
-                {{ session('success') }}
-            </div>
-        @endif
-
+       
         <button type="submit">Invia</button>
     </form>
 
