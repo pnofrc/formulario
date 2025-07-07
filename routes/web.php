@@ -101,13 +101,15 @@ Route::post('/iscrizione', function (Request $request) {
 // });
 
 
-Route::get('/ciao', function() {
+Route::get('/form2025', function() {
     return view('ospitalita.create');
 })->name('ospitalita.create');
 
 Route::post('/ospitalita/store', [OspitalitaController::class, 'store'])->name('ospitalita.store');
 
-
+Route::get('/conferma', function () {
+    return view('ospitalita.ok');
+})->name('conferma');
 
 Route::get('/shifts', function () {
     return view('shifts');

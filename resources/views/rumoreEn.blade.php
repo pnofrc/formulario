@@ -75,7 +75,7 @@
         </ul>
     </p>
     <p>you’ll also need a Habitat association card 2025, which costs €10.</p>
-    <p>below, you’ll find the section to join as a VOLUNTEER (we need our community, and the ticket price drops!), and most importantly KITCHEN: to avoid waste and plan well (big challenge for us cooking for 100+ people), meals must be purchased IN ADVANCE below — no on-site meal sales!! </p>
+    {{-- <p>below, you’ll find the section to join as a VOLUNTEER (we need our community, and the ticket price drops!), and most importantly KITCHEN: to avoid waste and plan well (big challenge for us cooking for 100+ people), meals must be purchased IN ADVANCE below — no on-site meal sales!! </p> --}}
     <br>
 
     <i class="quote">
@@ -102,22 +102,20 @@
         <label>
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
             📌 check this box if you already have a Habitat association card.
-the card is required to access the spaces at Ca’ dei Monti. to get one, click here to sign up, then come back and tick this box <h1>(it’s mandatory)</h1>.
+the card is required to access the spaces at Ca’ dei Monti. to get one, <a
+                    href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">CLICK HERE</a> to sign up, then come back and tick this box.
 
         </label>
-        <div><small><a
-                    href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">Register here</a></small></div>
-        <br>
 
         <br><br><br>
 
-        <label>
+        {{-- <label>
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
 📌 into communal creative jamming and want to help in building up for the days leading up to the festival ? feel inspired for some chop chop in the rumore veg kitchen or for other tasks we haven’t even thought of yet ? ORIGINI FUTURE isn’t  possible without you. Check the box here if you want to help in running the festival as a volunteer (and see your ticket price dropping down from 40€ to 10€ as a thank you for you help :)).            <br><br>
             <i>
                 We will contact you soon :)</i>
 
-        </label>
+        </label> --}}
 
         <br><br>
 
@@ -199,7 +197,7 @@ a few deets: the kitchen will be vegetarian and serve 3 meals + snacks daily, fr
         <br>
 
         @if (session('success'))
-            <div style="color: green; font-weight: bold;">
+            <div style="color: green; font-weight: bold; font-size: 3rem">
                 {{ session('success') }}
             </div>
         @endif

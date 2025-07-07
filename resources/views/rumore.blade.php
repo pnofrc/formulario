@@ -75,7 +75,7 @@
         </ul>
     </p>
     <p>è necessaria inoltre, la tessera associativa Habitat 2025 ad un costo di 10€.</p>
-    <p>qui sotto infine, si trova la sezione dedicata al partecipare come VOLONTARI (abbiam bisogno della nostra comunità, e il ticket diventa ridotto!), e soprattutto CUCINA: in ottica anti-spreco e buona programmazione del lavoro (grande sfida per noi cucinare per 100+ persone), i pasti sono da acquistare IN ANTICIPO qui giù, non sarà possibile acquistare in loco !!</p>
+    {{-- <p>qui sotto infine, si trova la sezione dedicata al partecipare come VOLONTARI (abbiam bisogno della nostra comunità, e il ticket diventa ridotto!), e soprattutto CUCINA: in ottica anti-spreco e buona programmazione del lavoro (grande sfida per noi cucinare per 100+ persone), i pasti sono da acquistare IN ANTICIPO qui giù, non sarà possibile acquistare in loco !!</p> --}}
     <br>
     <i class="quote">a costruirlo insieme, <br>
     dolci baci.</i>
@@ -100,22 +100,20 @@
         <label>
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
             📌 metti la x se sei in possesso di tessera associativa Habitat. <br>
-        La tessera è necessaria per poter usare gli spazi di Ca’ de monti. Per iscriversi clicca qui, e poi torna a mettere la x <h1>(obbligatoria)</h1> dopo esserti iscrittə.
+        La tessera è necessaria per poter usare gli spazi di Ca’ de monti. Per iscriversi <a
+                    href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">CLICCA QUI</a>, e poi torna a mettere la x  dopo esserti iscrittə.
         </label>
-        <div><small><a
-                    href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">Iscriviti cliccando qua</a></small></div>
-        <br>
 
         <br><br><br>
 
-        <label>
+        {{-- <label>
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
 📌 hai energie creative per il building up i giorni prima del festival? ti senti ispirato per un po’ di chop chop in cucina o altri compiti che manco noi sappiamo ? ORIGINI FUTURE non funzia senza di voi, metti una x per dare una mano come VOLONTARIO/A (e abbassare il costo del ticket da 40€ a 10€).
             <br><br>
             <i>
                 Ti contatteremo al più presto via email per organizzarci :)</i>
 
-        </label>
+        </label> --}}
 
         <br><br>
 
@@ -197,7 +195,7 @@
         <br>
 
         @if (session('success'))
-            <div style="color: green; font-weight: bold;">
+             <div style="color: green; font-weight: bold; font-size: 3rem">
                 {{ session('success') }}
             </div>
         @endif

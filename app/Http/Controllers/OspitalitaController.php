@@ -33,6 +33,6 @@ class OspitalitaController extends Controller
         $ospitalita->data_partenza = $validated['data_partenza'];
         $ospitalita->save();
 
-        return redirect()->route('ospitalita.create')->with('success', 'Richiesta inviata!');
+        return redirect()->route('conferma')->with('success', 'Richiesta inviata!');
     }
 }
