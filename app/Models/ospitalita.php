@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Services\CalcoloCiboMensileService;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,8 +11,7 @@ class Ospitalita extends Model
 {
     use HasFactory;
 
-
-     protected $fillable = [
+    protected $fillable = [
         'nome',
         'chi_sei',
         'mail',
@@ -41,6 +41,4 @@ protected static function booted()
     static::updated($aggiorna);
     static::deleted($aggiorna);
 }
-
-
 }
