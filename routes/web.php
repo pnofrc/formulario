@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Conto;
 use App\Models\Rumore;
-use App\Models\Ospitalita;
+use App\Models\ospitalita;
 use App\Http\Controllers\OspitalitaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

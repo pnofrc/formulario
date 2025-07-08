@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\OspitalitaResource\Pages;
 use App\Filament\Resources\OspitalitaResource\RelationManagers;
-use App\Models\Ospitalita;
+use App\Models\ospitalita;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class OspitalitaResource extends Resource
 {
-    protected static ?string $model = Ospitalita::class;
+    protected static ?string $model = ospitalita::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

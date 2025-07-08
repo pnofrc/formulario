@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Ospitalita;
+use App\Models\ospitalita;
 use App\Models\Movimento;
 use App\Models\StatisticaCiboMensile;
 use App\Services\CalcoloCiboMensileService;
@@ -30,7 +30,7 @@ class OspitalitaController extends Controller
             'accettato' => 'accepted',
         ]);
 
-        $ospitalita = new Ospitalita();
+        $ospitalita = new ospitalita();
         $ospitalita->tipologia_stanza = $validated['tipologia_stanza'];
         $ospitalita->numero_ospiti = $validated['numero_ospiti'];
         $ospitalita->nome = json_decode(convertiNomi($validated['nomi'])) ;
@@ -47,7 +47,7 @@ public function calcolaCiboMensile($foodPerDay = 5)
     $mensili = collect();
 
     // 1. Calcola la parte ricavata dagli ospiti (stimato)
-    Ospitalita::each(function ($ospitalita) use ($foodPerDay, &$mensili) {
+    ospitalita::each(function ($ospitalita) use ($foodPerDay, &$mensili) {
         $start = Carbon::parse($ospitalita->data_arrivo);
         $end = Carbon::parse($ospitalita->data_partenza)->subDay(); // esclude il giorno di partenza
 
@@ -126,7 +126,7 @@ public function calcolaCiboMensile($foodPerDay = 5)
 public function scontrinoMensile()
 {
     // Ospitalità per mese
-    $ospitalita = Ospitalita::all()->groupBy(function ($osp) {
+    $ospitalita = ospitalita::all()->groupBy(function ($osp) {
         return Carbon::parse($osp->data_arrivo)->startOfMonth()->toDateString();
     });
 

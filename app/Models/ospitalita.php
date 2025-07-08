@@ -7,7 +7,7 @@ use App\Services\CalcoloCiboMensileService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ospitalita extends Model
+class ospitalita extends Model
 {
     use HasFactory;
 

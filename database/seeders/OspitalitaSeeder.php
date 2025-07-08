@@ -4,7 +4,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Ospitalita;
+use App\Models\ospitalita;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 
@@ -12,13 +12,13 @@ class OspitalitaSeeder extends Seeder
 {
     public function run(): void
     {
-        Ospitalita::truncate();
+        ospitalita::truncate();
 
         $arrivi = [
         ];
 
         foreach ($arrivi as $arrivo) {
-            Ospitalita::create($arrivo);
+            ospitalita::create($arrivo);
         }
     }
 }

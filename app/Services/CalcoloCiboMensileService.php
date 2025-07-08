@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Models\Movimento;
-use App\Models\Ospitalita;
+use App\Models\ospitalita;
 use App\Models\StatisticaCiboMensile;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
@@ -16,7 +16,7 @@ class CalcoloCiboMensileService
         $mensili = collect();
 
         // 1. Calcolo base da Ospitalità
-        Ospitalita::each(function ($ospitalita) use ($foodPerDay, &$mensili) {
+        ospitalita::each(function ($ospitalita) use ($foodPerDay, &$mensili) {
             $start = Carbon::parse($ospitalita->data_arrivo);
             $end = Carbon::parse($ospitalita->data_partenza)->subDay(); // escluso giorno di partenza
 
