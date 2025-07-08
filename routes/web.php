@@ -111,6 +111,12 @@ Route::get('/conferma', function () {
     return view('ospitalita.ok');
 })->name('conferma');
 
+Route::get('/food', [OspitalitaController::class, 'calcolaCiboMensile'])->name('food');
+
+Route::get('/statisticaCiboMensile', [OspitalitaController::class, 'scontrinoMensile']);
+
+// ---------
+
 Route::get('/shifts', function () {
     return view('shifts');
 })->name('form.form');

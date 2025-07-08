@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\CalcoloCiboMensileService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,4 +33,14 @@ class ospitalita extends Model
         'nome'            => 'array',
         'eventi_extra'            => 'array',
     ];
+
+protected static function booted()
+{
+  $aggiorna = fn () => (new CalcoloCiboMensileService)->esegui();
+    static::created($aggiorna);
+    static::updated($aggiorna);
+    static::deleted($aggiorna);
+}
+
+
 }

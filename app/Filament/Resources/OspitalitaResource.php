@@ -29,37 +29,32 @@ class OspitalitaResource extends Resource
                     ->default(1)
                     ->minValue(1)
                     ->required()
-                      ->visible(fn (Forms\Get $get) => $get('paga_ospitalita'))
                     ->reactive(),
                     
 
-Forms\Components\Repeater::make('nome')
-    ->label('Nomi')
-    ->schema([
-        Forms\Components\TextInput::make('nome')
-            ->label('Nome')
-            ->required(),
-    ])
-    ->minItems(1)
-    ->maxItems(fn (callable $get) => (int) ($get('numero_ospiti') ?? 1))
-    ->defaultItems(1)
-    ->columnSpanFull()
-
-    
-,
+                Forms\Components\Repeater::make('nome')
+                    ->label('Nomi')
+                    ->schema([
+                        Forms\Components\TextInput::make('nome')
+                            ->label('Nome')
+                            ->required(),
+                    ])
+                    ->minItems(1)
+                    ->maxItems(fn (callable $get) => (int) ($get('numero_ospiti') ?? 1))
+                    ->defaultItems(1),
 
                 Forms\Components\TextInput::make('chi_sei')
                     ->label('Chi sei')
                     ->nullable(),
 
-                Forms\Components\Toggle::make('artista_evento')
-                    ->label('Artista Evento')
-                    ->required(),
+                // Forms\Components\Toggle::make('artista_evento')
+                //     ->label('Artista Evento')
+                //     ->required(),
 
-                Forms\Components\Toggle::make('paga_ospitalita')
-                    ->label('Paga Ospitalità')
-                    ->default(true)
-                    ->reactive(),
+                // Forms\Components\Toggle::make('paga_ospitalita')
+                //     ->label('Paga Ospitalità')
+                //     ->default(true)
+                //     ->reactive(),
 
                 Forms\Components\Toggle::make('iscrizione')
                     ->label('Iscrizione')
@@ -93,12 +88,10 @@ Forms\Components\Repeater::make('nome')
 
                 Forms\Components\TextInput::make('eventi_extra')
                     ->label('Eventi Extra')
-                      ->visible(fn (Forms\Get $get) => $get('paga_ospitalita'))
                     ->json()
                     ->nullable(),
 
                 Forms\Components\Toggle::make('mandata_mail')
-                  ->visible(fn (Forms\Get $get) => $get('paga_ospitalita'))
                     ->label('Mandata Mail?')
                     ->default(false),
 
@@ -119,18 +112,15 @@ public static function table(Table $table): Table
     return $table
         ->columns([
             Tables\Columns\TextColumn::make('nome')
-                ->label('Nomi')
-                ->formatStateUsing(function ($state) {
-                    if (is_array($state)) {
-                        return collect($state)->join(', ');
-                    }
-                    if (is_string($state) && $state !== '') {
-                        return collect(json_decode($state, true) ?: explode(',', $state))->join(', ');
-                    }
-                    return '-';
-                })
-                ->wrap()
-            ,
+    ->label('Nomi')
+    ->formatStateUsing(function ($state) {
+        $names= str_replace('{"nome":"', '', $state);
+        $names = str_replace('"}', '', $names);
+       return $names;
+    })
+    ->wrap(),
+
+
 
             Tables\Columns\TextColumn::make('numero_ospiti')
                 ->label('N. Ospiti'),
@@ -144,29 +134,30 @@ public static function table(Table $table): Table
                     default => 'secondary',
                 }),
 
-            Tables\Columns\IconColumn::make('paga_ospitalita')
-                ->label('Paga')
-                ->boolean(),
+            Tables\Columns\ToggleColumn::make('mandata_mail')
+                ->label('Mail?'),
 
-            Tables\Columns\IconColumn::make('pagato')
-                ->label('Pagato')
-                ->boolean(),
+            Tables\Columns\ToggleColumn::make('confermato')
+                ->label('Confermato?'),
 
-            Tables\Columns\IconColumn::make('confermato')
-                ->label('Confermato')
-                ->boolean(),
+            Tables\Columns\ToggleColumn::make('iscrizione')
+                ->label('Iscrizione?'),
+
+            Tables\Columns\ToggleColumn::make('pagato')
+                ->label('Pagato?'),
+
 
             Tables\Columns\TextColumn::make('data_arrivo')
                 ->label('Arrivo')
-                ->date('d/m/Y'),
+                ->date('d/m'),
 
             Tables\Columns\TextColumn::make('data_partenza')
                 ->label('Partenza')
-                ->date('d/m/Y'),
+                ->date('d/m'),
         ])
         ->filters([
-            Tables\Filters\TernaryFilter::make('paga_ospitalita')
-                ->label('Paga ospitalità'),
+            // Tables\Filters\TernaryFilter::make('paga_ospitalita')
+            //     ->label('Paga ospitalità'),
 
             Tables\Filters\TernaryFilter::make('pagato')
                 ->label('Pagato'),
@@ -176,6 +167,7 @@ public static function table(Table $table): Table
         ])
         ->actions([
             Tables\Actions\EditAction::make(),
+            Tables\Actions\DeleteAction::make(),
         ])
         ->bulkActions([
             Tables\Actions\BulkActionGroup::make([

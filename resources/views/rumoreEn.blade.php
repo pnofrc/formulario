@@ -52,7 +52,8 @@
             width: 100%;
             background: none;
             border: solid blue;
-            padding: 1rem 2rem
+            padding: 1rem 2rem;
+            color: black !important;
         }
     </style>
 </head>
@@ -204,7 +205,7 @@ a few deets: the kitchen will be vegetarian and serve 3 meals + snacks daily, fr
         <br>
 
        
-        <button type="submit">Invia</button>
+        <button type="submit">Send</button>
     </form>
 
     <script>

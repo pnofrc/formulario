@@ -52,7 +52,8 @@
             width: 100%;
             background: none;
             border: solid blue;
-            padding: 1rem 2rem
+            padding: 1rem 2rem;
+            color: black !important;
         }
     </style>
 </head>
