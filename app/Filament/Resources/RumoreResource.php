@@ -24,6 +24,11 @@ class RumoreResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+             public static function canAccess(): bool
+     {
+         return auth()->check() && in_array(auth()->user()->id, [1,2]);
+     }
+
     public static function form(Form $form): Form
     {
         return $form
