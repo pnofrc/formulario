@@ -31,7 +31,7 @@ class ospitalita extends Model
 
       protected $casts = [
         'nome'            => 'array',
-        'eventi_extra'            => 'array',
+        'eventi_extra'    => 'array',
     ];
 
 protected static function booted()

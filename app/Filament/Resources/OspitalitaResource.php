@@ -86,9 +86,20 @@ class OspitalitaResource extends Resource
                     ->nullable(),
 
 
-                Forms\Components\TextInput::make('eventi_extra')
-                    ->label('Eventi Extra')
-                    ->json()
+                Forms\Components\Repeater::make('eventi_extra')
+                    ->label('Regola conti eventi extra')
+                    ->schema([
+                        Forms\Components\TextInput::make('descrizione')
+                            ->label('Descrizione')
+                            ->required(),
+
+                        Forms\Components\TextInput::make('valore')
+                            ->label('Valore')
+                            ->numeric()
+                            ->required(),
+                    ])
+                    ->addActionLabel('Aggiungi evento')
+                    ->default([])
                     ->nullable(),
 
                 Forms\Components\Toggle::make('mandata_mail')

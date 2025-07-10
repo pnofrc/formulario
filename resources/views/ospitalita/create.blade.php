@@ -154,7 +154,7 @@
                         interests: 'Cosa fai/fate?',
                         data_arrivo: 'Data Arrivo',
                         data_partenza: 'Data Partenza',
-                        accettato: 'Responsabilità collettiva: Ho letto i <a href=\'habitattt.it/wiki/index.php?title=Commons\' target=\'_blank\'>Commons</a> e mi <a href="https://docs.google.com/forms/d/e/1FAIpQLSei4FW2C42GeQUty6X1E5aawAhG50txuVwKkE_nqOXB2Ypphg/viewform" target="_blank">iscriverò all\'associazione</a>',
+                        accettato: 'Responsabilità collettiva: Ho letto i <a href=\'http://habitattt.it/wiki/index.php?title=Commons\' target=\'_blank\'>Commons</a> e mi <a href="https://docs.google.com/forms/d/e/1FAIpQLSei4FW2C42GeQUty6X1E5aawAhG50txuVwKkE_nqOXB2Ypphg/viewform" target="_blank">iscriverò all\'associazione</a>',
                         invia: 'Invia Richiesta'
                     },
                     en: {
@@ -167,7 +167,7 @@
                         interests: 'What you do?',
                         data_arrivo: 'Arrival Date',
                         data_partenza: 'Departure Date',
-                        accettato: 'Sharing responsability: I have read the <a href="habitattt.it/wiki/index.php?title=Commons-en" target="_blank">Commons</a> and will <a href="https://docs.google.com/forms/d/e/1FAIpQLSei4FW2C42GeQUty6X1E5aawAhG50txuVwKkE_nqOXB2Ypphg/viewform" target="_blank">join the association</a>',
+                        accettato: 'Sharing responsability: I have read the <a href="http://habitattt.it/wiki/index.php?title=Commons-en" target="_blank">Commons</a> and will <a href="https://docs.google.com/forms/d/e/1FAIpQLSei4FW2C42GeQUty6X1E5aawAhG50txuVwKkE_nqOXB2Ypphg/viewform" target="_blank">join the association</a>',
                         invia: 'Submit Request'
                     }
                 },

@@ -14,5 +14,13 @@ class Rumore extends Model
         'volontari',
         'cibo',
         'costo_totale',
+
+        'soldi',
+        'fatta_iscrizione',
+        'data_tessera',
+        'metodo_pagamento',
+        'mandata_mail',
+        'dentro_ca_monti',
+        'note'
     ];
 }

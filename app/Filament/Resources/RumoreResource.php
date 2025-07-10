@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Select;
 
 class RumoreResource extends Resource
 {
@@ -37,11 +38,43 @@ class RumoreResource extends Resource
                 ->email()
                 ->required()
                 ->maxLength(255),
+
+            Toggle::make('mandata_mail')
+                ->default(false)
+                ->label('Mandata mail recap?'),
+                
             TextInput::make('numero_telefono')
                 ->required()
                 ->maxLength(30),
+
+            
+            
+            Select::make('metodo_pagamento')
+                ->label('Denaro inviato')
+                ->options([
+                        'paypal' => 'paypal',
+                        'iban' => 'iban',
+                        'cash' => 'cash',
+                    ])
+                    ->default('paypal')
+                    ->nullable(),
+
+             Toggle::make('fatta_iscrizione')
+                ->default(false)
+                ->label('Compilata iscrizione?'),
+
             Toggle::make('pagato_iscrizione')
-                ->label('Ha pagato iscrizione'),
+                ->default(false)
+                ->label('Pagato iscrizione?'),
+
+            Toggle::make('dato_tessera')
+                ->default(false)
+                ->label('Consegnata tessera?'),
+
+            Toggle::make('dentro_ca_monti')
+                ->default(false)
+                ->label('Dentro a Ca de Monti?'),
+
             Toggle::make('volontari')
                 ->label('Volontario'),
             Toggle::make('cibo')
@@ -56,6 +89,16 @@ class RumoreResource extends Resource
                 ->step(0.01)
                 ->default(0)
                 ->required(),
+
+            TextInput::make('soldi')
+                ->label('Denaro inviato')
+                ->prefix('€')
+                ->nullable()
+                ->numeric(),
+
+            TextInput::make('note')
+                    ->nullable(),
+            
             ]);
     }
 
@@ -63,22 +106,36 @@ class RumoreResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ToggleColumn::make('dentro_ca_monti'),
                  Tables\Columns\TextColumn::make('nome')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('cognome')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('email')->searchable(),
-                Tables\Columns\TextColumn::make('numero_telefono'),
-                Tables\Columns\IconColumn::make('pagato_iscrizione')->boolean(),
-                Tables\Columns\IconColumn::make('volontari')->boolean(),
+                 Tables\Columns\ToggleColumn::make(name: 'mandata_mail'),
+                 Tables\Columns\SelectColumn::make('metodo_pagamento') ->options([
+                        'paypal' => 'paypal',
+                        'iban' => 'iban',
+                        'cash' => 'cash',
+                    ]),
+                // Tables\Columns\TextColumn::make('numero_telefono'),
+                Tables\Columns\ToggleColumn::make('fatta_iscrizione'),
+                Tables\Columns\ToggleColumn::make('pagato_iscrizione'),
+                Tables\Columns\ToggleColumn::make(name: 'data_tessera'),
+                Tables\Columns\IconColumn::make('volontari')->label('volontariu')->boolean(),
                 Tables\Columns\IconColumn::make('cibo')->boolean(),
-                Tables\Columns\TextColumn::make('intolleranze')->limit(20),
+                // Tables\Columns\TextColumn::make('intolleranze')->limit(20),
                 Tables\Columns\TextColumn::make('costo_totale')
                     ->money('eur', locale: 'it')
+                    ->sortable(),
+                Tables\Columns\TextInputColumn::make('soldi')
+                    ->label('denaro dato')
                     ->sortable(),
             ])
             ->filters([
                  TernaryFilter::make('volontari'),
                 TernaryFilter::make('pagato_iscrizione'),
                 TernaryFilter::make('cibo'),
+                TernaryFilter::make('mandata_mail'),
+                TernaryFilter::make(name: 'dentro_ca_monti'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

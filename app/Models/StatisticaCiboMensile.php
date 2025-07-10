@@ -23,7 +23,7 @@ class StatisticaCiboMensile extends Model
         'mese' => 'date',
     ];
 
-    // Accessor per colonna virtuale
+    // colonna virtuale
     public function getCiboSaldoAttribute(): float
     {
         return $this->cibo_totale_ricavato - $this->cibo_totale_speso;
