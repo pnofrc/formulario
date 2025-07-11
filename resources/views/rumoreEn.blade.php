@@ -76,7 +76,7 @@
         <p>ORIGINI FUTURE is an independent, non-profit festival.<br>
         Your contribution goes solely towards covering the basic costs to make it happen.
         <br>
-        <a href="http://habitattt.it/habitare/estate2025#next" target="_blank">Here the program</a>
+        <a href="http://habitattt.it/habitare/estate2025/en#next" target="_blank">Here the program</a>
  </p>
 
     <p>Entry: €40<br>Includes:
