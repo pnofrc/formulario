@@ -50,7 +50,7 @@ class UserResource extends Resource
                 ->required(fn (string $context): bool => $context === 'create')
                 ->dehydrateStateUsing(fn ($state) => filled($state) ? Hash::make($state) : null)
                 ->dehydrated(fn ($state) => filled($state))
-                // ->hiddenOn('edit'),
+                ->hiddenOn('edit'),
             ]);
     }
 

@@ -59,37 +59,42 @@
 </head>
 
 <body>
-    <h1>Origini Future :: rumore b @ Habitat 18-20 Jul 2025</h1>
+     <h1>Origini Future :: rumore b @ Habitat</h1>
+    <h3>Ca’ de Monti | 18–20 July 2025</h3>
+    <h3>A micro-festival of art, community and territory</h3>
 
-     @if (session('success'))
-            <div style="color: green; font-weight: bold; font-size: 3rem">
+            @if (session('success'))
+             <h1 style="color: green; font-weight: bold; text-align: center; font-size: 3rem">
                 {{ session('success') }}
-            </div>
+             </h1>
         @endif
 
 
     <a href="/iscrizioneRumore2025/en">Cambia in italiano!</a>
 
     <div class="container">
-    <p>Sweet humans, welcome to the registration / payment / meal booking form for ORIGINI FUTURE 25! ✨✨</p>
-    <p>Our micro-festival is a collective experiment. A space where the lines between participants, artists and organizers gently blur. we are intentionally non-profit: the amounts below exist only to cover the basic costs of making this happen, hope to get your understanding.</p>
+        <p>ORIGINI FUTURE is an independent, non-profit festival.<br>
+        Your contribution goes solely towards covering the basic costs to make it happen.
+        <br>
+        <a href="http://habitattt.it/habitare/estate2025#next">Here the program</a>
+ </p>
 
-    <p>🎫 the ticketing system includes a single 40€ entry, which gives you access to:
+    <p>Entry: €40<br>Includes:
         <ul>
-            <li>festival and use of outdoor spaces of Ca’ de Monti, from Friday 18.07 to Sunday 20.07, included;</li>
-            <li>workshops and music throughout the weekend</li>
-            <li>tent spot, compost toilets and ext. showers</li>
-            <li>drinking water </li>
+            <li>access to the festival (from Friday morning 18.07 to Sunday early afternoon 20.07)</li>
+            <li>workshops, music and activities</li>
+            <li>tent spot, compost toilets, outdoor showers</li>
+            <li>drinking water</li>
         </ul>
     </p>
-    <p>you’ll also need a Habitat association card 2025, which costs €10.</p>
+    {{-- <p>you’ll also need a Habitat association card 2025, which costs €10.</p> --}}
     {{-- <p>below, you’ll find the section to join as a VOLUNTEER (we need our community, and the ticket price drops!), and most importantly KITCHEN: to avoid waste and plan well (big challenge for us cooking for 100+ people), meals must be purchased IN ADVANCE below — no on-site meal sales!! </p> --}}
-    <br>
+    {{-- <br>
 
     <i class="quote">
         warm and soft hugs,<br>
         see you soon.</i>
-    <br><br>
+    <br><br> --}}
     </div>
 
     <form method="POST" action="{{ route('iscrizione.store') }}" x-data="formData()">
@@ -109,13 +114,11 @@
 
         <label>
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
-            📌 check this box if you already have a Habitat association card.
-the card is required to access the spaces at Ca’ dei Monti. to get one, <a
-                    href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">CLICK HERE</a> to sign up, then come back and tick this box.
+         Habitat 2025 membership is required (€10)
+ <a href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">Please register here</a> then check the box
 
         </label>
 
-        <br><br><br>
 
         {{-- <label>
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
@@ -125,21 +128,20 @@ the card is required to access the spaces at Ca’ dei Monti. to get one, <a
 
         </label> --}}
 
-        <br><br>
 
         <div class="box">
 
             <label>
                 <input type="checkbox" x-model="cibo" name="cibo" value="1">
-📌 ORIGINI FUTURE also means good food 🫕🥬  <br>
-to avoid waste, we kindly ask you to book/pay NOW!   <br> <br>
-a few deets: the kitchen will be vegetarian and serve 3 meals + snacks daily, from Friday lunch to Sunday lunch included. regardless of when you arrive, it’s a flat rate of €40 (that’s 7 meals, under €6 each! plus snacks 🧃🧃). meals won’t be available for purchase on site!! tick the box if you want in.  
+Meals (optional, €40) <br>
+Vegetarian cusine. 3 meals a day + snacks from Friday lunch to Sunday lunch (7 meals).<br>
+The price regardless of arrival time.
 
             </label>
 
             <div>
-            NB. PS: you’re free to bring your own food and/or drive to the nearest town (20 min by car – not ideal, but doable!). <b>no stoves or open flames allowed due to fire risk. </b>          </div>
-
+You’re welcome to bring your own food, but please note that stoves and open flames are not allowed.
+</div>
             <br>
             <br>
 
@@ -147,14 +149,12 @@ a few deets: the kitchen will be vegetarian and serve 3 meals + snacks daily, fr
 
                 <div>
                     <label>please let us know here if you have any allergies, intolerances or specific dietary needs:
-                        <br>
-                        (All meals are vegetarian)
                     </label><br>
                     <input type="text" name="intolleranze"><br><br>
 
 
                     <div class="box">
-                        <p>10 euro entrance festival + 40 euro foos: <strong>€50</strong></p>
+                        <p>10 euro entrance festival + 40 euro food: <strong>€50</strong></p>
                         <a href="https://paypal.me/rumoreb/50" target="_blank" class="link">Paga con PayPal</a>
                     </div>
 

@@ -59,34 +59,41 @@
 </head>
 
 <body>
-    <h1>Origini Future :: rumore b @ Habitat 18-20 Lug 2025</h1>
+    <h1>Origini Future :: rumore b @ Habitat</h1>
+    <h3>Ca’ de Monti | 18–20 Luglio 2025</h3>
+    <h3>Micro-festival tra arte, comunità e territorio</h3>
 
             @if (session('success'))
-             <div style="color: green; font-weight: bold; font-size: 3rem">
+             <h1 style="color: green; font-weight: bold; text-align: center; font-size: 3rem">
                 {{ session('success') }}
-            </div>
+             </h1>
         @endif
 
     <a href="/iscrizioneRumore2025/en">Change in english!</a>
 
     <div class="container">
-    <p>Carə umanə benvenutə al form di iscrizione/pagamento/prenotazioni pasti di ORIGINI FUTURE 25  ✨✨</p>
-    <p>Per partire, il micro-festival è pensato come un esperimento comunitario, dove il confine tra partecipantə, artistə e organizzatorə si dissolve. siamo dichiaratamente non a scopo di lucro e le cifre richieste servono esclusivamente per ripagare le spese di realizzazione, speriamo vengano comprese :)</p>
+    {{-- <p>Carə umanə benvenutə al form di iscrizione/pagamento/prenotazioni pasti di ORIGINI FUTURE 25  ✨✨</p> --}}
+    {{-- <p>Per partire, il micro-festival è pensato come un esperimento comunitario, dove il confine tra partecipantə, artistə e organizzatorə si dissolve. siamo dichiaratamente non a scopo di lucro e le cifre richieste servono esclusivamente per ripagare le spese di realizzazione, speriamo vengano comprese :)</p> --}}
+        <p>
+            ORIGINI FUTURE è un festival indipendente, non a scopo di lucro. <br>
+            La quota serve solo a coprire le spese vive per renderlo possibile 
+            <br><a href="http://habitattt.it/habitare/estate2025#next" target="_blank">Qua il programma</a>
 
-    <p>🎫 il sistema di ticketing prevede un ingresso unico di 40€ che comprende:
+        </p>
+    <p>Ingresso: 40€ <br>Include:
         <ul>
-            <li>acceso al festival ed utilizzo spazi esterni di Ca’ de monti, da mattina venerdì 18 a Domenica 20 luglio inclusi</li>
-            <li>accesso a workshops e musica</li>
-            <li>posto tenda e uso bagni e docce esterne</li>
-            <li> acqua potabile</li>
+            <li>acceso al festival (da Venerdì 18 mattina a Domenica 20 primo pomeriggio)</li>
+            <li>workshops, musica e attività</li>
+            <li>posto tenda, bagni, docce esterne</li>
+            <li>acqua potabile</li>
         </ul>
     </p>
-    <p>è necessaria inoltre, la tessera associativa Habitat 2025 ad un costo di 10€.</p>
+   
     {{-- <p>qui sotto infine, si trova la sezione dedicata al partecipare come VOLONTARI (abbiam bisogno della nostra comunità, e il ticket diventa ridotto!), e soprattutto CUCINA: in ottica anti-spreco e buona programmazione del lavoro (grande sfida per noi cucinare per 100+ persone), i pasti sono da acquistare IN ANTICIPO qui giù, non sarà possibile acquistare in loco !!</p> --}}
-    <br>
+    {{-- <br>
     <i class="quote">a costruirlo insieme, <br>
     dolci baci.</i>
-    <br><br>
+    <br><br> --}}
     </div>
 
     <form method="POST" action="{{ route('iscrizione.store') }}" x-data="formData()">
@@ -106,12 +113,10 @@
 
         <label>
             <input type="checkbox" name="pagato_iscrizione" value="1" required>
-            📌 metti la x se sei in possesso di tessera associativa Habitat. <br>
-        La tessera è necessaria per poter usare gli spazi di Ca’ de monti. Per iscriversi <a
-                    href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">CLICCA QUI</a>, e poi torna a mettere la x  dopo esserti iscrittə.
+             È obbligatoria la tessera Habitat 2025 (10€) <br>
+         <a href="https://forms.gle/o531HuN5Rt7XyVzJ7" target="_blank">Iscriviti qui</a>, poi spunta la casella
         </label>
 
-        <br><br><br>
 
         {{-- <label>
             <input type="checkbox" x-model="volontari" name="volontari" value="1">
@@ -122,19 +127,19 @@
 
         </label> --}}
 
-        <br><br>
 
         <div class="box">
 
             <label>
                 <input type="checkbox" x-model="cibo" name="cibo" value="1">
-               📌 ORIGINI FUTURE sarà anche buon cibo 🫕🥬 <br> per evitare sprechi, chiediamo prenotazione/pagamento ORA!
-              <br><br>un po’ di info:  la cucina sarà vegetariana, prevede serviti 3 pasti + merdende giornalieri dal pranzo del venerdì al pranzo della domenica compresi,. indipendentemente dal momento di arrivo, il costo è unico di 40€ (7 pasti, meno di 6€/cada uno! + merende 🧃🧃). Non sarà possibile acquistare lì per lì !! metti una x se vuoi includere.
+               Pasti (opzionale, 40€) <br>
+            Cucina vegetariana. 3 pasti al giorno + merende da venerdì pranzo a domenica pranzo (7 pasti).<br>
+            Prezzo fisso, indipendentemente dall’arrivo, prenotazione obbligatoria ora.
 
             </label>
 
             <div>
-                NB in alternativa si è liberə di portare il proprio cibo da casa e/o di raggiungere la prima cittadina a 20min di macchina, non comodo ma possibile! <b>vietati però fornelli e fuochi per rischio incendio.</b>
+                È possibile portare cibo da casa ma sono ammessi fornelli o fuochi.            
             </div>
 
             <br>
@@ -144,8 +149,6 @@
 
                 <div>
                     <label>Indica qui se hai allergie, intolleranze o diete particolari. 
-                        <br>
-                        Nota: Tutti i pasti offerti sono completamente vegetariani.
                     </label><br>
                     <input type="text" name="intolleranze"><br><br>
 
@@ -176,9 +179,7 @@
 
             <template x-if="volontari && !cibo">
 
-
                 <div class="box">
-
 
                     <p>10 euro ingresso festival: <strong>€10</strong></p>
                     <a href="https://paypal.me/rumoreb/10" target="_blank" class="link">Paga con PayPal</a>
@@ -193,11 +194,8 @@
                 </div>
             </template>
 
-        </div>
-
-        <p>Sappiamo essere tempi difficili per spendere soldi nel divertimento. abbiamo tentato il massimo per contenere i prezzi di ticketing e cucina. 
+      <p>Sappiamo essere tempi difficili per spendere soldi nel divertimento. abbiamo tentato il massimo per contenere i prezzi di ticketing e cucina. 
             <br>Se per te non è sufficiente, sentiti liber di contattarci privatamente a rumore.b.b@gmail.com, felici di aiutare :) </p>
-        </div>
 
         <br>
 
