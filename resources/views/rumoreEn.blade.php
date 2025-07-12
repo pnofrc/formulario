@@ -144,7 +144,7 @@ You’re welcome to bring your own food, but please note that stoves and open fl
 </div>
             <br>
             <br>
-
+  </div>
             <template x-if="cibo && volontari">
 
                 <div>
@@ -190,7 +190,7 @@ You’re welcome to bring your own food, but please note that stoves and open fl
 
             <template x-if="!cibo && !volontari">
                 <div class="box">
-                    <p>40 euro entrance festival: <strong>€40</strong></p>
+                    <p>Entrance festival: <strong>€40</strong></p>
                     <a href="https://paypal.me/rumoreb/40" target="_blank" class="link">Pay with PayPal</a>
 
                 </div>

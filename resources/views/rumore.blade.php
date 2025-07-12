@@ -144,6 +144,7 @@
 
             <br>
             <br>
+        </div>
 
             <template x-if="cibo && volontari">
 
@@ -188,7 +189,7 @@
 
             <template x-if="!cibo && !volontari">
                 <div class="box">
-                    <p>40 euro ingresso festival: <strong>€40</strong></p>
+                    <p>Ingresso festival: <strong>€40</strong></p>
                     <a href="https://paypal.me/rumoreb/40" target="_blank" class="link">Paga con PayPal</a>
 
                 </div>
