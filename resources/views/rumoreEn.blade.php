@@ -140,7 +140,7 @@ The price regardless of arrival time.
             </label>
 
             <div>
-You’re welcome to bring your own food, but please note that stoves and open flames are not allowed.
+You’re welcome to bring your own food, but please note that stoves and open flames are NOT allowed.
 </div>
             <br>
             <br>

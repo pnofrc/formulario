@@ -139,7 +139,7 @@
             </label>
 
             <div>
-                È possibile portare cibo da casa ma sono ammessi fornelli o fuochi.            
+                È possibile portare cibo da casa ma NON sono ammessi fornelli o fuochi.            
             </div>
 
             <br>
