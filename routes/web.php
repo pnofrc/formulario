@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Conto;
 use App\Models\Rumore;
+use App\Models\Qua;
 use App\Models\ospitalita;
 use App\Http\Controllers\OspitalitaController;
 use Illuminate\Http\Request;
@@ -29,6 +30,10 @@ Route::get('/iscrizioneRumore2025', function () {
 Route::get('/iscrizioneRumore2025/en', function () {
     return view('rumoreEn');
 })->name('iscrizione.form');
+
+Route::get('/qua', function () {
+    return view('qua');
+})->name('qua.form');
 
 Route::post('/iscrizione', function (Request $request) {
     $data = $request->validate([
@@ -69,9 +74,24 @@ Route::post('/iscrizione', function (Request $request) {
 })->name('iscrizione.store');
 
 
-// Route::get('/form2025', function () {
-//     return view('form');
-// });
+Route::post('/iscrizione', function (Request $request) {
+    $data = $request->validate([
+        'nome' => 'required|string|max:255',
+        'cognome' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'metodo_pagamento' => 'nullable|string|in:paypal,iban,cash',
+    ]);
+
+
+    Qua::create($data);
+
+    return redirect()->route('qua.form')->with('success', 'Subscription Successfully sent!');
+})->name('qua.store');
+
+
+Route::get('/quaa', function () {
+    dd(Qua::first()->toArray());
+});
 
 
 // Route::post('/form2025', function (Request $request) {

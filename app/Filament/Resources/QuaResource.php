@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\RumoreResource\Pages;
-use App\Filament\Resources\RumoreResource\RelationManagers;
-use App\Models\Rumore;
-use Filament\Tables\Filters\TernaryFilter;
+use App\Filament\Resources\QuaResource\Pages;
+use App\Filament\Resources\QuaResource\RelationManagers;
+use App\Models\Qua;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -17,14 +16,15 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
+use Filament\Tables\Filters\TernaryFilter;
 
-class RumoreResource extends Resource
+class QuaResource extends Resource
 {
-    protected static ?string $model = Rumore::class;
+    protected static ?string $model = Qua::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-             public static function canAccess(): bool
+    public static function canAccess(): bool
      {
          return auth()->check() && in_array(auth()->user()->id, [1,2]);
      }
@@ -33,7 +33,7 @@ class RumoreResource extends Resource
     {
         return $form
             ->schema([
-            TextInput::make('nome')
+                TextInput::make('nome')
                 ->required()
                 ->maxLength(255),
             TextInput::make('cognome')
@@ -47,12 +47,6 @@ class RumoreResource extends Resource
             Toggle::make('mandata_mail')
                 ->default(false)
                 ->label('Mandata mail recap?'),
-                
-            TextInput::make('numero_telefono')
-                ->required()
-                ->maxLength(30),
-
-            
             
             Select::make('metodo_pagamento')
                 ->label('Denaro inviato')
@@ -80,27 +74,6 @@ class RumoreResource extends Resource
                 ->default(false)
                 ->label('Dentro a Ca de Monti?'),
 
-            Toggle::make('volontari')
-                ->label('Volontario'),
-            Toggle::make('cibo')
-                ->label('Vuole il cibo'),
-            Textarea::make('intolleranze')
-                ->rows(2)
-                ->maxLength(255),
-            TextInput::make('costo_totale')
-                ->label('Costo Totale (€)')
-                ->numeric()
-                ->prefix('€')
-                ->step(0.01)
-                ->default(0)
-                ->required(),
-
-            TextInput::make('soldi')
-                ->label('Denaro inviato')
-                ->prefix('€')
-                ->nullable()
-                ->numeric(),
-
             TextInput::make('note')
                     ->nullable(),
             
@@ -121,22 +94,12 @@ class RumoreResource extends Resource
                         'iban' => 'iban',
                         'cash' => 'cash',
                     ]),
-                // Tables\Columns\TextColumn::make('numero_telefono'),
                 Tables\Columns\ToggleColumn::make('fatta_iscrizione'),
                 Tables\Columns\ToggleColumn::make('pagato_iscrizione'),
                 Tables\Columns\ToggleColumn::make(name: 'data_tessera'),
-                Tables\Columns\IconColumn::make('volontari')->label('volontariu')->boolean(),
-                Tables\Columns\IconColumn::make('cibo')->boolean(),
-                // Tables\Columns\TextColumn::make('intolleranze')->limit(20),
-                Tables\Columns\TextColumn::make('costo_totale')
-                    ->money('eur', locale: 'it')
-                    ->sortable(),
-                Tables\Columns\TextInputColumn::make('soldi')
-                    ->label('denaro dato')
-                    ->sortable(),
             ])
             ->filters([
-                 TernaryFilter::make('volontari'),
+                TernaryFilter::make('volontari'),
                 TernaryFilter::make('pagato_iscrizione'),
                 TernaryFilter::make('cibo'),
                 TernaryFilter::make('mandata_mail'),
@@ -162,9 +125,9 @@ class RumoreResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRumores::route('/'),
-            'create' => Pages\CreateRumore::route('/create'),
-            'edit' => Pages\EditRumore::route('/{record}/edit'),
+            'index' => Pages\ListQuas::route('/'),
+            'create' => Pages\CreateQua::route('/create'),
+            'edit' => Pages\EditQua::route('/{record}/edit'),
         ];
     }
 }
