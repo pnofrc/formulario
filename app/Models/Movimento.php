@@ -16,6 +16,8 @@ class Movimento extends Model
         'metodo_pagamento',
         'pagato',
         'note',
+        'extra', 
+        'updated_at',
     ];
 
     protected static function booted()

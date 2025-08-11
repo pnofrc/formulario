@@ -65,7 +65,7 @@
 <body>
      <h1>QUA @ Habitat</h1>
     <h3>Ca’ de Monti | 30-31 August 2025</h3>
-    {{-- <h3>stratificazioni sinestetiche eccentriche</h3> --}}
+    <h3>Suoni Selvatici e Massime Stratificazioni</h3>
 
             @if (session('success'))
              <h1 style="color: green; font-weight: bold; text-align: center; font-size: 3rem">
@@ -76,22 +76,21 @@
 
     <div class="container">
 
-        {{-- Accumuli stravaganti di batteri, polline, polvere, spore, semi, radici, insetti, animali, funghi, sentieri, passi, sincopi, suoni, vibrazioni, frequenze, onde, circuiti, luci, ombre, odori, sapori, fiamme, legna, fascine, accendini, farine, lieviti, acqua, benzina, motori, freni, acceleratori, pneumatici, polmoni, muscoli, ossa, sangue, carne, pelle, capelli, unghie, denti, occhi, orecchie, bocca, naso, cervello, parole, sbadigli, saltelli. --}}
+        Accumuli stravaganti di batteri, polline, polvere, spore, semi, radici, insetti, animali, funghi, sentieri, passi, sincopi, suoni, vibrazioni, frequenze, onde, circuiti, luci, ombre, odori, sapori, fiamme, legna, fascine, accendini, farine, lieviti, acqua, benzina, motori, freni, acceleratori, pneumatici, polmoni, muscoli, ossa, sangue, carne, pelle, capelli, unghie, denti, occhi, orecchie, bocca, naso, cervello, parole, sbadigli, saltelli.
         
-        {{-- <br>        <br>
+        <br>        <br>
 
-        con: lucia palladino, tau contrib, le frit, perila, giulia rae, la festa delle rane, blossom, amaro, nodef, yulia kachan, tundra, habitat t.p.u. > herbalife, lamatigre, poni, torpedo
+        con: tau contrib, le frit, perila, giulia rae, la festa delle rane, blossom, amaro, nodef, yulia kachan, callisto’s walk, di lucia palladino, tundra, habitat t.p.u. > herbalife, lamatigre, poni, torpedo
 
         <br>        <br>
 
-        dalle ore 18 di sabato la terrazza sarà un campo di frequenze e insalate di persone --}}
-        
-
- {{-- </p> --}}
+        dalle ore 15 di sabato la terrazza sarà un campo di frequenze e insalate di persone 
+                
 
  <p><s>First Release: 10€ (15 spots)</s></p>
- <p>Second Release: 20€ (20 spots)</p>
+ <p><s>Second Release: 20€ (20 spots)</s></p>
  <p>Third Release: 30€</p>
+
     {{-- <p> --}}
         {{-- entry: €30<br>Includes: --}}
         <ul>
@@ -129,7 +128,7 @@
 
         </label>
 
-        {{-- <div class="box">
+        <div class="box">
 
             Saturday's dinner will be proposed by Habitat <i>Locanda Aperta</i> Unit and it will be a vegetarian (vegan option surely possible)
             meal made of a sourdough Lievito Mamma edible fossil and organic vegetables alchemically cooked in our wood oven. 
@@ -138,7 +137,7 @@
             If will be 7€ - If you have any allergies or intolerances let us know info@habitattt.it, we can also do a gluten free bread.<br>
             <br>
             Please note that stoves and open flames are NOT allowed.
-        </div> --}}
+        </div>
             
         <br>
         <br>

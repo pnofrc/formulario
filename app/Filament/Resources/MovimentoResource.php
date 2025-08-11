@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\DatePicker;
 
 
 
@@ -69,11 +70,18 @@ class MovimentoResource extends Resource
                     ->rows(3)
                     ->nullable(),
 
+                 Forms\Components\TextInput::make('extra')
+                    ->integer()
+                    ->nullable(),
+
                 Forms\Components\FileUpload::make('foto_scontrino')
                     ->label('Foto Scontrino')
                     ->image()
                     ->directory('scontrini')
                     ->nullable(),
+
+                DatePicker::make('updated_at')
+                    ->format('d/m/Y')
             ]);
     }
 
@@ -88,7 +96,6 @@ class MovimentoResource extends Resource
                 Tables\Columns\TextColumn::make('metodo_pagamento')->label('Metodo Pagamento')->sortable(),
                 Tables\Columns\TextColumn::make('note')->label('Note')->limit(50),
                 Tables\Columns\ImageColumn::make('foto_scontrino')->label('Foto Scontrino')->rounded()->toggleable(),
-                Tables\Columns\TextColumn::make('created_at')->label('Creato')->dateTime()->sortable(),
             ])
             ->filters([
                 //
