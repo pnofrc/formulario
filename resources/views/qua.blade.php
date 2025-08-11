@@ -67,11 +67,7 @@
     <h3>Ca’ de Monti | 30-31 August 2025</h3>
     <h3>Suoni Selvatici e Massime Stratificazioni</h3>
 
-            @if (session('success'))
-             <h1 style="color: green; font-weight: bold; text-align: center; font-size: 3rem">
-                {{ session('success') }}
-             </h1>
-        @endif
+            
 
 
     <div class="container">
@@ -94,7 +90,7 @@
     {{-- <p> --}}
         {{-- entry: €30<br>Includes: --}}
         <ul>
-            <li>access to the festival (Saturday afternoon 30th -> Sunday afternoon 31th)</li>
+            <li>access to the festival (Saturday afternoon 30th -> Monday Morning 1st)</li>
             <li>tent spot, compost toilets, outdoor showers</li>
             <li>drinking water</li>
             <li>Sunday's Breakfast</li>
@@ -152,7 +148,7 @@
 
             <div x-show="metodo_pagamento === 'paypal'">
                 <br>
-               <a target="_blank" href="https://www.paypal.com/ncp/payment/PP9DSELGT4LBS">PayPal link to payment</a>
+               <a target="_blank" href="https://www.paypal.com/ncp/payment/KP7B2SD9WHUNL">PayPal link to payment</a>
             </div>
 
             <div x-show="metodo_pagamento === 'iban'">
@@ -168,7 +164,12 @@
 
 
           <br>  <br>
-       
+
+       @if (session('success'))
+             <h1 style="color: green; font-weight: bold; text-align: center; font-size: 3rem">
+                {{ session('success') }}
+             </h1>
+        @endif
         <button type="submit">Send</button>
     </form>
 
