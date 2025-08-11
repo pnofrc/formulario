@@ -76,7 +76,7 @@
         
         <br>        <br>
 
-        con: tau contrib, le frit, perila, giulia rae, la festa delle rane, blossom, amaro, nodef, yulia kachan, callisto’s walk, di lucia palladino, tundra, habitat t.p.u. > herbalife, lamatigre, poni, torpedo
+        con: tau contrib, le frit, perila, giulia rae, la festa delle rane, blossom, amaro, nodef, yulia kachan, <i>callisto’s walk</i> - lucia palladino, tundra, habitat t.p.u. > herbalife, lamatigre, poni, torpedo
 
         <br>        <br>
 
